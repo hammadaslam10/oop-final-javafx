@@ -1,0 +1,117 @@
+package HammadAslam;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.scene.Parent;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.shape.Rectangle;
+import javafx.stage.Stage;
+import javafx.scene.Node;
+
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class Controller {
+private Stage stage;
+private Scene scene;
+private Parent root;
+StudentInfo s =new StudentInfo();
+    @FXML
+    private Rectangle rect;
+    @FXML
+    private Label cross;
+    @FXML
+    private Button LoginButton;
+    @FXML
+    public TextField name;
+
+    @FXML
+    private PasswordField pass;
+
+
+
+    @FXML
+    void Crossbutton(javafx.scene.input.MouseEvent event) {
+        if(event.getSource() ==cross)
+System.exit(0);
+    }
+
+
+public void SwitchToHome(ActionEvent event) throws Exception{
+    root=FXMLLoader.load(getClass().getResource("HomePage.fxml"));
+    stage=(Stage)((Node)event.getSource()).getScene().getWindow();
+scene=new Scene(root);
+    stage.setScene(scene);
+    stage.show();
+
+}
+    public void SwitchToSTUDENT(ActionEvent event) throws Exception{
+        root=FXMLLoader.load(getClass().getResource("Students.fxml"));
+        stage=(Stage)((Node)event.getSource()).getScene().getWindow();
+        scene=new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+
+    }
+    public void SwitchToTeacher(ActionEvent event) throws Exception{
+        root=FXMLLoader.load(getClass().getResource("Teacher.fxml"));
+        stage=(Stage)((Node)event.getSource()).getScene().getWindow();
+        scene=new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+
+    }
+    public void SwitchToAdmin(ActionEvent event) throws Exception{
+        root=FXMLLoader.load(getClass().getResource("Admin.fxml"));
+        stage=(Stage)((Node)event.getSource()).getScene().getWindow();
+        scene=new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+
+    }
+        public void SaveDataAndAllowStudent(ActionEvent event) throws IOException{
+
+        try {
+
+        StringBuilder st=new StringBuilder();
+        st.append("username   "+name.getText().toString()+"\n");
+        st.append("pass       "+pass.getText().toString()+"\n");
+        File file=new File("Student.txt");
+
+
+        if (!file.exists()) {
+            file.createNewFile();
+        }
+
+        FileWriter Write = new FileWriter(file.getName(), true);
+        BufferedWriter bw = new BufferedWriter(Write);
+        bw.write(st.toString());
+        bw.close();
+        System.out.println("Done");
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+       /* String username = name.getText();
+        FXMLLoader Loader = new FXMLLoader(getClass().getClassLoader().getResource("StudentPortal.fxml"));
+        root=Loader.load();
+        StudentInfo StudentController =Loader.getController();
+      //  StudentController.DisplayLoginInfo(username);
+//  root=FXMLLoader.load(getClass().getResource("StudentPortal.fxml"));
+    stage=(Stage)((Node)event.getSource()).getScene().getWindow();
+    scene=new Scene(root);
+    stage.setScene(scene);
+    stage.show();*/
+
+
+
+}
+
+
+}

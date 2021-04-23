@@ -1,0 +1,33 @@
+.rect{
+-fx-background-color:white;
+-fx-border-top-left-radius:15;
+-fx-border-top-right-radius:50;
+-fx-border-bottom-right-radius:30;
+-fx-border-bottom-left-radius:5;
+}
+
+.button{
+-fx-background-color:light_green;
+-fx-font-family:FontAwesome;
+-fx-font-size:27;
+}
+.button:hover{
+-fx-background-color:blue;
+}
+
+.button:pressed
+{
+-fx-background-color : white;
+}
+.table-view .column-header,
+.table-view .column-header-background .filter{
+-fx-cell-size:20;
+-fx-background-color: blue;
+}
+.table-view .column-header .label{
+-fx-text-fill: white;
+-fx-font-weight: bold;
+-fx-alignment :CENTER_LEFT;
+}
+
+
