@@ -13,24 +13,23 @@ import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import javafx.scene.Node;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+
+import java.io.*;
+
 
 public class Controller {
 private Stage stage;
 private Scene scene;
 private Parent root;
-StudentInfo s =new StudentInfo();
+    private Parent root1;
+
     @FXML
     private Rectangle rect;
     @FXML
     private Label cross;
+
     @FXML
-    private Button LoginButton;
-    @FXML
-    public TextField name;
+    TextField name;
 
     @FXML
     private PasswordField pass;
@@ -44,7 +43,7 @@ System.exit(0);
     }
 
 
-public void SwitchToHome(ActionEvent event) throws Exception{
+    public void SwitchToHome(ActionEvent event) throws Exception{
     root=FXMLLoader.load(getClass().getResource("HomePage.fxml"));
     stage=(Stage)((Node)event.getSource()).getScene().getWindow();
 scene=new Scene(root);
@@ -76,42 +75,57 @@ scene=new Scene(root);
         stage.show();
 
     }
-        public void SaveDataAndAllowStudent(ActionEvent event) throws IOException{
+        public void SaveDataAndAllowStudent(ActionEvent event) throws IOException {
+           //ye dekh isme line 87 na charna or error 83 pe araha hai
+            String username = name.getText();
 
-        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("StudentPortal.fxml"));
+                root=loader.load();
 
-        StringBuilder st=new StringBuilder();
-        st.append("username   "+name.getText().toString()+"\n");
-        st.append("pass       "+pass.getText().toString()+"\n");
-        File file=new File("Student.txt");
+                StudentInfo studentInfo =loader.getController();
+                studentInfo.DisplayLogin(username);
+                // root=FXMLLoader.load(getClass().getResource("StudentPortal.fxml"));
+                stage=(Stage)((Node)event.getSource()).getScene().getWindow();
+                scene=new Scene(root);
+                stage.setScene(scene);
+                stage.show();
 
-
-        if (!file.exists()) {
-            file.createNewFile();
         }
+        public  void    lOGIN(ActionEvent event)throws IOException{
 
-        FileWriter Write = new FileWriter(file.getName(), true);
-        BufferedWriter bw = new BufferedWriter(Write);
-        bw.write(st.toString());
-        bw.close();
-        System.out.println("Done");
-    } catch (IOException e) {
-        e.printStackTrace();
-    }
-       /* String username = name.getText();
-        FXMLLoader Loader = new FXMLLoader(getClass().getClassLoader().getResource("StudentPortal.fxml"));
-        root=Loader.load();
-        StudentInfo StudentController =Loader.getController();
-      //  StudentController.DisplayLoginInfo(username);
-//  root=FXMLLoader.load(getClass().getResource("StudentPortal.fxml"));
-    stage=(Stage)((Node)event.getSource()).getScene().getWindow();
-    scene=new Scene(root);
-    stage.setScene(scene);
-    stage.show();*/
+            try {
+
+                StringBuilder st=new StringBuilder();
+                st.append("username   "+name.getText().toString()+"\n");
+                st.append("pass       "+pass.getText().toString()+"\n");
+                File file=new File("Student.txt");
 
 
+                if (!file.exists()) {
+                    file.createNewFile();
+                }
 
-}
+                FileWriter Write = new FileWriter(file.getName(), true);
+                BufferedWriter bw = new BufferedWriter(Write);
+                bw.write(st.toString());
+                bw.close();
 
+                String username = name.getText();
+                FXMLLoader Loader = new FXMLLoader(getClass().getClassLoader().getResource("StudentPortal.fxml"));
+                root=Loader.load();
+
+                StudentInfo StudentController =Loader.getController();
+                StudentController.DisplayLogin(username);
+                // root=FXMLLoader.load(getClass().getResource("StudentPortal.fxml"));
+                stage=(Stage)((Node)event.getSource()).getScene().getWindow();
+                scene=new Scene(root);
+                stage.setScene(scene);
+                stage.show();
+
+                System.out.println("Done");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
 
 }

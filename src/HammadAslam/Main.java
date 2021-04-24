@@ -19,7 +19,7 @@ public class Main extends Application {
 
 
             primaryStage.setScene(se);
-            // Font.loadFont(Application.class.getResource("C:/Users/Muhammad Hanif/Documents/jar_files/fonts/awesome.ttf"). toExternalForm(), 12);
+            // Font.loadFont(Application.class.getResource("C:/Users/ Muhammad Hanif/Documents/jar_files/fonts/awesome.ttf"). toExternalForm(), 12);
             //    se.getStylesheets().add(getClass().getResource("Application.css").toExternalForm());
             String css=this.getClass().getResource("Styles.css").toExternalForm();
             se.getStylesheets().add(css);
