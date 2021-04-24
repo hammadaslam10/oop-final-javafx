@@ -10,72 +10,6 @@
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="548.0" prefWidth="756.0" style="-fx-background-color: #52FAF5;" stylesheets="@Styles.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="HammadAslam.StudentInfo">
-<<<<<<< HEAD
-   <children>
-      <VBox prefHeight="548.0" prefWidth="227.0" style="-fx-background-color: #6894F4; -fx-border-color: white;" stylesheets="@Styles.css" AnchorPane.leftAnchor="0.0">
-         <children>
-            <Pane prefHeight="120.0" prefWidth="227.0" style="-fx-background-color: #66894F4;">
-               <children>
-                  <Label layoutX="64.0" layoutY="14.0" prefHeight="48.0" prefWidth="100.0" text="GUT" textAlignment="RIGHT" textFill="WHITE">
-                     <font>
-                        <Font name="System Bold Italic" size="48.0" />
-                     </font>
-                  </Label>
-                  <Label alignment="CENTER" layoutX="-1.0" layoutY="39.0" prefHeight="70.0" prefWidth="227.0" text="Goveremnt University Of Techology" textFill="WHITE" wrapText="true">
-                     <font>
-                        <Font size="13.0" />
-                     </font>
-                  </Label>
-               </children>
-            </Pane>
-            <Button alignment="CENTER" cancelButton="true" graphicTextGap="100.0" lineSpacing="1000.0" mnemonicParsing="false" onAction="#SwitchToSemesterInfo" prefHeight="73.0" prefWidth="227.0" style="-fx-font-size: 20;" stylesheets="Styles.css" text="Semester summary" textAlignment="CENTER" textFill="#f3f8f5">
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
-               <font>
-                  <Font size="27.0" />
-               </font>
-               <effect>
-                  <InnerShadow height="1.48" radius="0.0" width="0.0" />
-               </effect>
-               <VBox.margin>
-                  <Insets bottom="70.0" />
-               </VBox.margin>
-            </Button>
-            <Button alignment="CENTER" cancelButton="true" graphicTextGap="100.0" lineSpacing="1000.0" mnemonicParsing="false" onAction="#SwitchToCourseRegistration" prefHeight="49.0" prefWidth="225.0" style="-fx-font-size: 20;" stylesheets="Styles.css" text="Course registration" textAlignment="CENTER" textFill="WHITE">
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
-               <font>
-                  <Font size="27.0" />
-               </font>
-               <effect>
-                  <InnerShadow height="1.48" radius="0.0" width="0.0" />
-               </effect>
-               <VBox.margin>
-                  <Insets bottom="70.0" />
-               </VBox.margin>
-            </Button>
-            <Button alignment="TOP_CENTER" cancelButton="true" lineSpacing="1000.0" mnemonicParsing="false" onAction="#SwitchToPolicies" prefHeight="57.0" prefWidth="242.0" stylesheets="Styles.css" text="Policies" textAlignment="CENTER" textFill="WHITE">
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
-               <font>
-                  <Font size="27.0" />
-               </font>
-               <effect>
-                  <InnerShadow height="1.48" radius="0.0" width="0.0" />
-               </effect>
-               <VBox.margin>
-                  <Insets bottom="70.0" />
-               </VBox.margin>
-            </Button>
-         </children>
-      </VBox>
-      <Label fx:id="cross" layoutX="686.0" layoutY="31.0" onDragDetected="#Crossbutton" prefHeight="36.0" prefWidth="54.0" text="x" />
-      <Label layoutX="265.0" layoutY="98.0" onDragDetected="#SwitchToStudentPortal" text="Studentportal" />
-   </children>
-=======
     <children>
         <VBox prefHeight="548.0" prefWidth="227.0" style="-fx-background-color: #6894F4; -fx-border-color: white;" stylesheets="@Styles.css" AnchorPane.leftAnchor="0.0">
             <children>
@@ -137,11 +71,16 @@
                 </Button>
             </children>
         </VBox>
+        <Label fx:id="cross" layoutX="733.0" layoutY="-12.0" onDragDetected="#Crossbutton" onMouseClicked="#Crossbutton" prefHeight="32.0" prefWidth="18.0" text="x" textFill="WHITE">
+            <font>
+                <Font size="36.0" />
+            </font>
+        </Label>
         <Label fx:id="cross1" layoutX="227.0" onDragDetected="#SwitchStudentPortal" onMouseClicked="#Crossbutton" prefHeight="53.0" prefWidth="59.0" text="&lt;--" textFill="WHITE">
             <font>
                 <Font size="36.0" />
             </font>
         </Label>
     </children>
->>>>>>> 1f70cfea9ae290f2ca5e042ed0de0fde638ca01c
 </AnchorPane>
+<!--comment for checking-->
