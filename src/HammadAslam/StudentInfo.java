@@ -1,5 +1,6 @@
 package HammadAslam;
 
+
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
@@ -23,7 +24,12 @@ public class StudentInfo {
     private Scene scene;
     private Parent root;
     @FXML
-     Label InfoLabel;
+     Label InfoLabel1;
+    @FXML
+    private Label InfoLabel2;
+
+    @FXML
+    private Label InfoLabel3;
 
     @FXML
     private Label cross;
@@ -74,10 +80,12 @@ public class StudentInfo {
             System.exit(0);
     }
 
-    void DisplayLogin(String Username){
+    void DisplayLogin(String Username, String Pass){
 
-        InfoLabel.setText("hello"+Username);
+        InfoLabel1.setText("Welcome Back:- "+Username);
         //ye dekh
+        InfoLabel2.setText("Registration Number Is:- "+Pass);
+        InfoLabel3.setText("Your Are Studying in 2nd Semester");
     }
 
 
