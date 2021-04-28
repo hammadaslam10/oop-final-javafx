@@ -73,48 +73,16 @@ public class Controller {
     public void SaveDataAndAllowStudent(ActionEvent event) throws IOException {
         //ye dekh isme line 87 na charna or error 83 pe araha hai
         String username = name.getText();
+        String RegistrationNumber=pass.getText();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("StudentPortal.fxml"));
         root=loader.load();
         StudentInfo studentInfo =loader.getController();
-        studentInfo.DisplayLogin(username);
+        studentInfo.DisplayLogin(username,RegistrationNumber);
         // root=FXMLLoader.load(getClass().getResource("StudentPortal.fxml"));
         stage=(Stage)((Node)event.getSource()).getScene().getWindow();
         scene=new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
-    public void lOGIN(ActionEvent event)throws IOException {
-        try {
-            StringBuilder st=new StringBuilder();
-            st.append("username   "+name.getText().toString()+"\n");
-            st.append("pass       "+pass.getText().toString()+"\n");
-            File file=new File("Student.txt");
 
-            if (!file.exists()) {
-                file.createNewFile();
-            }
-
-            FileWriter Write = new FileWriter(file.getName(), true);
-            BufferedWriter bw = new BufferedWriter(Write);
-            bw.write(st.toString());
-            bw.close();
-
-            String username = name.getText();
-            FXMLLoader Loader = new FXMLLoader(getClass().getClassLoader().getResource("StudentPortal.fxml"));
-            root=Loader.load();
-
-            StudentInfo StudentController =Loader.getController();
-            StudentController.DisplayLogin(username);
-            // root=FXMLLoader.load(getClass().getResource("StudentPortal.fxml"));
-            stage=(Stage)((Node)event.getSource()).getScene().getWindow();
-            scene=new Scene(root);
-            stage.setScene(scene);
-            stage.show();
-
-            System.out.println("Done");
-        }
-        catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 }

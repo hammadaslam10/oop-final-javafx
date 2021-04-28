@@ -71,8 +71,24 @@
             </Button>
          </children>
       </VBox>
-      <Label fx:id="cross" layoutX="686.0" layoutY="31.0" onDragDetected="#Crossbutton" prefHeight="36.0" prefWidth="54.0" text="x" />
-      <Button layoutX="271.0" layoutY="37.0" mnemonicParsing="false" onAction="#SwitchToStudentPortal" text="Button" />
-      <Label fx:id="InfoLabel" layoutX="484.0" layoutY="339.0"  text="Label" />
+      <Label fx:id="cross" layoutX="728.0" layoutY="-13.0" onDragDetected="#Crossbutton" prefHeight="17.0" prefWidth="28.0" text="x" textFill="WHITE">
+         <font>
+            <Font size="36.0" />
+         </font></Label>
+      <Button layoutX="227.0" mnemonicParsing="false" onAction="#SwitchToStudentPortal" prefHeight="27.0" prefWidth="65.0" text="&lt;" textFill="WHITE" />
+      <Label fx:id="InfoLabel1" alignment="CENTER" layoutX="227.0" layoutY="123.0" prefHeight="53.0" prefWidth="529.0" text="Label" textFill="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font></Label>
+      <Label fx:id="InfoLabel2" alignment="CENTER" layoutX="227.0" layoutY="228.0" prefHeight="53.0" prefWidth="529.0" text="Label" textFill="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="InfoLabel3" alignment="CENTER" layoutX="227.0" layoutY="350.0" prefHeight="53.0" prefWidth="529.0" text="Label" textFill="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

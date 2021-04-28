@@ -7,6 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="548.0" prefWidth="756.0" style="-fx-background-color: #52FAF5;" stylesheets="@Styles.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="HammadAslam.StudentInfo">
@@ -27,7 +28,7 @@
                   </Label>
                </children>
             </Pane>
-            <Button alignment="CENTER" cancelButton="true" graphicTextGap="100.0" lineSpacing="1000.0" mnemonicParsing="false" onAction="#SwitchToSemesterInfo" prefHeight="73.0" prefWidth="227.0" style="-fx-font-size: 20;" stylesheets="Styles.css" text="Semester summary" textAlignment="CENTER" textFill="#f3f8f5">
+            <Button alignment="CENTER" cancelButton="true" graphicTextGap="100.0" lineSpacing="1000.0" mnemonicParsing="false" onAction="#SwitchToSemesterInfo" prefHeight="73.0" prefWidth="227.0" style="-fx-font-size: 20;" stylesheets="Styles.css" text="Main" textAlignment="CENTER" textFill="#f3f8f5">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
@@ -41,7 +42,7 @@
                   <Insets bottom="70.0" />
                </VBox.margin>
             </Button>
-            <Button alignment="CENTER" cancelButton="true" graphicTextGap="100.0" lineSpacing="1000.0" mnemonicParsing="false" onAction="#SwitchToCourseRegistration" prefHeight="49.0" prefWidth="225.0" style="-fx-font-size: 20;" stylesheets="Styles.css" text="Course registration" textAlignment="CENTER" textFill="WHITE">
+            <Button alignment="CENTER" cancelButton="true" graphicTextGap="100.0" lineSpacing="1000.0" mnemonicParsing="false" onAction="#SwitchToCourseRegistration" prefHeight="49.0" prefWidth="225.0" style="-fx-font-size: 20;" stylesheets="Styles.css" text="Course Registration" textAlignment="CENTER" textFill="WHITE">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
@@ -71,7 +72,76 @@
             </Button>
          </children>
       </VBox>
-      <Label fx:id="cross" layoutX="686.0" layoutY="31.0" onDragDetected="#Crossbutton" prefHeight="36.0" prefWidth="54.0" text="x" />
-      <Label layoutX="265.0" layoutY="98.0" onDragDetected="#SwitchToStudentPortal" text="Studentportal" />
+      <Label fx:id="cross" layoutX="728.0" layoutY="-13.0" onDragDetected="#Crossbutton" prefHeight="17.0" prefWidth="28.0" text="x" textFill="WHITE">
+         <font>
+            <Font size="36.0" />
+         </font></Label>
+      <Button layoutX="227.0" mnemonicParsing="false" onAction="#SwitchToStudentPortal" prefHeight="27.0" prefWidth="65.0" text="&lt;" textFill="WHITE" />
+      <Rectangle arcHeight="130.0" arcWidth="130.0" fill="DODGERBLUE" height="289.0" layoutX="236.0" layoutY="245.0" stroke="BLACK" strokeType="INSIDE" width="248.0" />
+      <Rectangle arcHeight="130.0" arcWidth="130.0" fill="DODGERBLUE" height="289.0" layoutX="492.0" layoutY="245.0" stroke="BLACK" strokeType="INSIDE" width="248.0" />
+      <Label fx:id="InfoLabel1" alignment="CENTER" layoutX="350.0" layoutY="303.0" prefHeight="27.0" prefWidth="133.0" text="Label" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <Label fx:id="InfoLabel2" alignment="CENTER" layoutX="364.0" layoutY="399.0" prefHeight="27.0" prefWidth="121.0" text="Label" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+             
+         </font>
+      </Label>
+      <Label fx:id="InfoLabel3" alignment="CENTER" layoutX="360.0" layoutY="345.0" prefHeight="27.0" prefWidth="121.0" text="Label" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="260.0" layoutY="308.0" text="NAME" />
+      <Label layoutX="245.0" layoutY="350.0" text="Registration Number" />
+      <Label layoutX="245.0" layoutY="404.0" text="Religion" />
+      <Label layoutX="247.0" layoutY="448.0" text="Phone number" />
+      <Label fx:id="InfoLabel21" alignment="CENTER" layoutX="358.0" layoutY="443.0" prefHeight="27.0" prefWidth="121.0" text="Label" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="247.0" layoutY="209.0" prefHeight="35.0" prefWidth="227.0" text="Personal Information" textFill="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="494.0" layoutY="209.0" prefHeight="35.0" prefWidth="248.0" text="Academic Details" textFill="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="507.0" layoutY="295.0" text="Current semester" />
+      <Label layoutX="503.0" layoutY="404.0" text="Departement" />
+      <Label layoutX="507.0" layoutY="350.0" text="CGPA" />
+      <Label layoutX="501.0" layoutY="448.0" text="Program Manager" />
+      <Label fx:id="InfoLabel11" alignment="CENTER" layoutX="598.0" layoutY="290.0" prefHeight="27.0" prefWidth="139.0" text="Label" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="InfoLabel111" alignment="CENTER" layoutX="598.0" layoutY="345.0" prefHeight="27.0" prefWidth="139.0" text="Label" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="InfoLabel112" alignment="CENTER" layoutX="598.0" layoutY="399.0" prefHeight="27.0" prefWidth="139.0" text="Label" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="89.0" layoutX="227.0" layoutY="81.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="529.0" />
+      <Label fx:id="InfoLabel1121" alignment="CENTER" layoutX="603.0" layoutY="443.0" prefHeight="27.0" prefWidth="133.0" text="Label" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="304.0" layoutY="99.0" prefHeight="35.0" prefWidth="390.0" text="Semester Info" textFill="WHITE">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
