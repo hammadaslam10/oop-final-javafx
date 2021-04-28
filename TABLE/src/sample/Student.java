@@ -3,16 +3,16 @@ package sample;
 import javafx.beans.property.*;
 
 public class Student {
-private StringProperty FirstName =new SimpleStringProperty(this,"Firstname", "");
-private StringProperty LastName=new SimpleStringProperty(this,"LastName", "");
-private StringProperty Department = new SimpleStringProperty(this,"Department");
-private StringProperty ProgramManager = new SimpleStringProperty(this,"ProgramManager","");
-private StringProperty Gender= new SimpleStringProperty(this,"Gender","");
-private IntegerProperty RegistrationNo = new SimpleIntegerProperty(this,"Registration",0);
-private IntegerProperty PhoneNo=new SimpleIntegerProperty(this,"PhoneNo",0);
-private IntegerProperty CurrentSem =new SimpleIntegerProperty(this,"CurrentSem",0);
-private DoubleProperty Cgpa =new SimpleDoubleProperty(this,"Cgpa",0.0);
-private StringProperty Religion = new SimpleStringProperty(this,"Religion","");
+    private StringProperty FirstName =new SimpleStringProperty(this,"Firstname", "");
+    private StringProperty LastName=new SimpleStringProperty(this,"LastName", "");
+    private StringProperty Department = new SimpleStringProperty(this,"Department");
+    private StringProperty ProgramManager = new SimpleStringProperty(this,"ProgramManager","");
+    private StringProperty Gender= new SimpleStringProperty(this,"Gender","");
+    private IntegerProperty RegistrationNo = new SimpleIntegerProperty(this,"Registration",0);
+    private IntegerProperty PhoneNo=new SimpleIntegerProperty(this,"PhoneNo",0);
+    private IntegerProperty CurrentSem =new SimpleIntegerProperty(this,"CurrentSem",0);
+    private DoubleProperty Cgpa =new SimpleDoubleProperty(this,"Cgpa",0.0);
+    private StringProperty Religion = new SimpleStringProperty(this,"Religion","");
 
     public StringProperty departmentProperty() {
         return Department;
@@ -135,7 +135,6 @@ private StringProperty Religion = new SimpleStringProperty(this,"Religion","");
         return CurrentSem;
     }
     public String toString() {
-
         return "First Name: " + getFirstName() + " | Last Name: " + getLastName() +" |RegistrationNo: "+getRegistrationNo()+" |PhoneNo: "+getPhoneNo()+" |CurrentSem: "+getCurrentSem()+" | Cgpa: "+getCgpa()+" | Department: "+getDepartment()+" |ProgramManager: "+getProgramManager()+" |Gender"+getGender()+" |Religion"+getReligion();
     }
 
