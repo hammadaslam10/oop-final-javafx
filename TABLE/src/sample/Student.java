@@ -9,7 +9,7 @@ public class Student {
     private StringProperty ProgramManager = new SimpleStringProperty(this,"ProgramManager","");
     private StringProperty Gender= new SimpleStringProperty(this,"Gender","");
     private IntegerProperty RegistrationNo = new SimpleIntegerProperty(this,"Registration",0);
-    private IntegerProperty PhoneNo=new SimpleIntegerProperty(this,"PhoneNo",0);
+    private DoubleProperty PhoneNo=new SimpleDoubleProperty(this,"PhoneNo",0.0);
     private IntegerProperty CurrentSem =new SimpleIntegerProperty(this,"CurrentSem",0);
     private DoubleProperty Cgpa =new SimpleDoubleProperty(this,"Cgpa",0.0);
     private StringProperty Religion = new SimpleStringProperty(this,"Religion","");
@@ -26,7 +26,7 @@ public class Student {
         return LastName;
     }
 
-    public IntegerProperty phoneNoProperty() {
+    public DoubleProperty phoneNoProperty() {
         return PhoneNo;
     }
 
@@ -67,7 +67,7 @@ public class Student {
         return CurrentSem.get();
     }
 
-    public int getPhoneNo() {
+    public double getPhoneNo() {
         return PhoneNo.get();
     }
 
@@ -115,7 +115,7 @@ public class Student {
         this.Department.set(department);
     }
 
-    public void setPhoneNo(int phoneNo) {
+    public void setPhoneNo(Double phoneNo) {
         this.PhoneNo.set(phoneNo);
     }
 
@@ -135,7 +135,7 @@ public class Student {
         return CurrentSem;
     }
     public String toString() {
-        return "First Name: " + getFirstName() + " | Last Name: " + getLastName() +" |RegistrationNo: "+getRegistrationNo()+" |PhoneNo: "+getPhoneNo()+" |CurrentSem: "+getCurrentSem()+" | Cgpa: "+getCgpa()+" | Department: "+getDepartment()+" |ProgramManager: "+getProgramManager()+" |Gender"+getGender()+" |Religion"+getReligion();
+        return "|" + getFirstName() + "|" + getLastName() +"| "+getRegistrationNo()+"|"+getPhoneNo()+"|"+getCurrentSem()+"|"+getCgpa()+"|"+getDepartment()+"|"+getProgramManager()+"|"+getGender()+"|"+getReligion();
     }
 
 }
