@@ -10,10 +10,25 @@ public class Teacher {
     private StringProperty Department= new SimpleStringProperty(this,"Department","");
     private StringProperty SubjectTeaches = new SimpleStringProperty(this,"SubjectTeaches","");
     private DoubleProperty PhoneNo = new SimpleDoubleProperty(this,"PhoneNo",0.0);
-
     private StringProperty Qualification=new SimpleStringProperty(this,"Qualification","");
     private StringProperty Designation =new SimpleStringProperty(this,"Designation","");
     private StringProperty Faculty =new SimpleStringProperty(this,"Faculty","");
+
+    public Teacher(){
+
+    }
+    public Teacher(String firstName, String lastName, int idNo, int experience, String department, String subjectTeaches, double phoneNo, String qualification, String designation, String faculty) {
+        this.FirstName = new SimpleStringProperty(firstName);
+        this.LastName = new SimpleStringProperty(lastName);
+        this.IdNo = new SimpleIntegerProperty(idNo);
+        this.Experience =new SimpleIntegerProperty(experience);
+        this.Department = new SimpleStringProperty(department);
+        this.SubjectTeaches = new SimpleStringProperty(subjectTeaches);
+        this.PhoneNo = new SimpleDoubleProperty(phoneNo);
+        this.Qualification = new SimpleStringProperty(qualification);
+        this.Designation = new SimpleStringProperty(designation);
+        this.Faculty = new SimpleStringProperty(faculty);
+    }
 
     public StringProperty firstNameProperty() {
         return FirstName;
@@ -57,7 +72,7 @@ public class Teacher {
 
     @Override
     public String toString() {
-        return "|" + getFirstName() + "|" + getLastName() +"| "+getIdNo()+"|"+getPhoneNo()+"|"+getExperience()+"|"+getDepartment()+"|"+getSubjectTeaches()+"|"+getQualification()+"|"+getDesignation()+"|"+getFaculty();
+        return "|" + getFirstName() + "|" + getLastName() +"|"+getIdNo()+"|"+getPhoneNo()+"|"+getExperience()+"|"+getDepartment()+"|"+getSubjectTeaches()+"|"+getQualification()+"|"+getDesignation()+"|"+getFaculty();
     }
 
     public String getDepartment() {

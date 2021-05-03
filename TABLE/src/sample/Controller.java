@@ -21,7 +21,7 @@ import java.io.*;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class StudentController implements Initializable {
+public class Controller implements Initializable {
     @FXML
     private ResourceBundle resources;
 
@@ -85,7 +85,7 @@ public class StudentController implements Initializable {
     private Button AddButton;
 
     @FXML
-    private TableView<Student> StudentTable;
+    private static TableView<Student> StudentTable;
 
     @FXML
     private Button DeleteButton;
@@ -116,7 +116,7 @@ public class StudentController implements Initializable {
     LastNameCol.setOnEditCommit(e->LastNameCol_OnEditCommit(e));
     RegistrationNoCol.setOnEditCommit(e->RegistrationNoCol_OnEditCommit(e));
     PhoneNoCol.setOnEditCommit(e->PhoneNo_OnEditCommit(e));
-    CurrentSemCol.setOnEditCommit(this::CurrentSemCol_OnEditCommit);
+    CurrentSemCol.setOnEditCommit(e->CurrentSemCol_OnEditCommit(e));
     CgpaCol.setOnEditCommit(e->CgpaCol_OnEditCommit(e));
     GenderCol.setOnEditCommit(e-> GenderCol_OnEditCommit(e));
     ReligionCol.setOnEditCommit(e->ReligionCol_OnEditCommit(e));
@@ -179,29 +179,32 @@ public class StudentController implements Initializable {
 
 }
 
-    public static void loadData(){
-        try(BufferedReader br = new BufferedReader(new FileReader("./student.txt"))){
-            String thisLine="";
-            while((thisLine= br.readLine())!=null){
-                String[] split = thisLine.split(" ");
-                String FirstName = split[0];
-                String LastName = split[1];
-                int RegistrationNo = Integer.parseInt(split[2]);
-                double PhoneNo = Double.parseDouble(split[3]);
-                int CurrentSem = Integer.parseInt(split[4]);
-                double Cgpa = Double.parseDouble(split[5]);
-                String Department = split[6];
-                String ProgramManager = split[7];
-                String Gender = split[8];
-                String Religion = split[9];
 
-                Student readData = new Student(FirstName,LastName,Department,ProgramManager,Gender,RegistrationNo,PhoneNo,CurrentSem,Cgpa,Religion);
-                ObservableStudentList.add(readData);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
+
+public static void loadData(){
+    try(BufferedReader br = new BufferedReader(new FileReader("./student.txt"))){
+        String thisLine="";
+        while((thisLine= br.readLine())!=null){
+            String[] split = thisLine.split(" ");
+            String FirstName = split[0];
+            String LastName = split[1];
+            int RegistrationNo = Integer.parseInt(split[2]);
+            double PhoneNo = Double.parseDouble(split[3]);
+            int CurrentSem = Integer.parseInt(split[4]);
+            double Cgpa = Double.parseDouble(split[5]);
+            String Department = split[6];
+            String ProgramManager = split[7];
+            String Gender = split[8];
+            String Religion = split[9];
+
+            Student readData = new Student(FirstName,LastName,Department,ProgramManager,Gender,RegistrationNo,PhoneNo,CurrentSem,Cgpa,Religion);
+            ObservableStudentList.add(readData);
         }
+        System.out.println(ObservableStudentList);
+    } catch (IOException e) {
+       e.printStackTrace();
     }
+}
 
 public void handleAddButtonClick(ActionEvent event) {
     if (ObservableStudentList.size() < 10) {
@@ -219,7 +222,6 @@ public void handleAddButtonClick(ActionEvent event) {
                 student.setGender(GenderCombo.getValue());
                 student.setCgpa(Double.parseDouble(CgpaField.getText()));
                 ObservableStudentList.add(student);
-                StudentTable.setItems(ObservableStudentList);
                 System.out.println(student.toString());
                 FirstNameField.clear();
                 LastNameField.clear();
@@ -245,9 +247,7 @@ public void handleAddButtonClick(ActionEvent event) {
                 student.setGender(GenderCombo.getValue());
                 student.setCgpa(Double.parseDouble(CgpaField.getText()));
                 ObservableStudentList.add(student);
-                //System.out.println(ObservableStudentList);
-
-                StudentTable.setItems(ObservableStudentList);
+                //System.out.println(ObservableStudentList)
                 //StudentTable.getColumns().addAll(FirstNameCol,LastNameCol,RegistrationNoCol,PhoneNoCol,CurrentSemCol,CgpaCol,DepartmentCol,ProgramManagerCol,GenderCol,ReligionCol);
 
                 FirstNameField.clear();
@@ -335,7 +335,6 @@ public void handleAddButtonClick(ActionEvent event) {
             if(emptyPhoneNoField.getResult() == ButtonType.OK) {
                 emptyPhoneNoField.close();
                 PhoneNoField.requestFocus();
-
             }
         }
         if(CurrentSemField == null || CurrentSemField.getText().trim().isEmpty()) {
@@ -364,7 +363,8 @@ public void handleAddButtonClick(ActionEvent event) {
                 CgpaField.requestFocus();
             }
         }
-        if(GenderCombo == null ||  GenderCombo.getValue().trim().isEmpty()) {
+        if(GenderCombo == null ||
+                GenderCombo.getValue().trim().isEmpty()) {
             validInput = false;
             Alert emptyGenderCombo = new Alert(Alert.AlertType.WARNING, "Warning", ButtonType.OK);
             Window owner = ((Node) event.getTarget()).getScene().getWindow();
@@ -417,14 +417,13 @@ public void handleAddButtonClick(ActionEvent event) {
 
         return validInput;
     }
-
-    public void handleSave(ActionEvent event) throws IOException {
-     //   Stage secondaryStage = new Stage();
-       // FileChooser fileChooser = new FileChooser();
-       /// fileChooser.setTitle("Save-Student-Table");
-        //fileChooser.setInitialDirectory(new File(System.getProperty("user.home")));
+    public void handleSave(ActionEvent event) {
+        Stage secondaryStage = new Stage();
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Save-Student-Table");
+        fileChooser.setInitialDirectory(new File(System.getProperty("user.home")));
         if(ObservableStudentList.isEmpty()) {
-          //  secondaryStage.initOwner(this.filemenu.getScene().getWindow());
+            secondaryStage.initOwner(this.filemenu.getScene().getWindow());
             Alert emptyTableAlert = new Alert(Alert.AlertType.ERROR, "EMPTY TABLE", ButtonType.OK);
             emptyTableAlert.setContentText("You have nothing to save");
             emptyTableAlert.initModality(Modality.APPLICATION_MODAL);
@@ -435,33 +434,22 @@ public void handleAddButtonClick(ActionEvent event) {
             }
         }
         else {
-         //   File file = fileChooser.showSaveDialog(secondaryStage);
-            File ss = new File("student.txt");
-            if(!ss.exists()){
-                ss.createNewFile();
-
+            File file = fileChooser.showSaveDialog(secondaryStage);
+            if(file != null) {
+                saveFile(StudentTable.getItems(), file);
             }
-            saveFile(StudentTable.getItems(), ss);
         }
     }
-    public void saveFile(ObservableList<Student> observableStudentList, File ss) {
+
+    public void saveFile(ObservableList<Student> observableStudentList, File file) {
         try {
-FileWriter append =new FileWriter(ss.getName(),true);
-         //   BufferedWriter outWriter = new BufferedWriter(new FileWriter(ss));
-//jo comment mara hai upar usse file me data add hoga or neche wala jo chal raha hai abhi us se overwrite
-            BufferedWriter outWriter = new BufferedWriter(new FileWriter(ss));
+            BufferedWriter outWriter = new BufferedWriter(new FileWriter(file));
 
             for(Student students : observableStudentList) {
                 outWriter.write(students.toString());
                 outWriter.newLine();
             }
             //System.out.println(observableStudentList.toString());
-            Alert SuccessAlert = new Alert(Alert.AlertType.INFORMATION, "Done", ButtonType.OK);
-            SuccessAlert.setContentText("Save Succesfull");
-            SuccessAlert.showAndWait();
-            if(SuccessAlert.getResult() == ButtonType.OK) {
-                SuccessAlert.close();
-            }
             outWriter.close();
         } catch (IOException e) {
             Alert ioAlert = new Alert(Alert.AlertType.ERROR, "OOPS!", ButtonType.OK);
@@ -491,7 +479,7 @@ FileWriter append =new FileWriter(ss.getName(),true);
 
 
     public void handleDeleteButtonClick(ActionEvent event) {
-        if(!ObservableStudentList.isEmpty()){
+        if(ObservableStudentList.isEmpty()){
             System.out.println("Delete button CLicked");
             Alert deleteAlert = new Alert(Alert.AlertType.WARNING, "Confirm", ButtonType.OK, ButtonType.CANCEL);
             Window owner = ((Node) event.getTarget()).getScene().getWindow();
@@ -579,8 +567,8 @@ FileWriter append =new FileWriter(ss.getName(),true);
 
 
     public void PhoneNo_OnEditCommit(Event e) {
-        TableColumn.CellEditEvent<Student, Double> cellEditEvent;
-        cellEditEvent = (TableColumn.CellEditEvent<Student, Double>) e;
+        TableColumn.CellEditEvent<Student, Integer> cellEditEvent;
+        cellEditEvent = (TableColumn.CellEditEvent<Student, Integer>) e;
         Student student = cellEditEvent.getRowValue();
         student.setPhoneNo(cellEditEvent.getNewValue());
     }
