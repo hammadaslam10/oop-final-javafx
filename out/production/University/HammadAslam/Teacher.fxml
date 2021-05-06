@@ -21,7 +21,7 @@
                 <Font name="FontAwesome Regular" size="24.0" />
             </font>
         </Label>
-        <Button fx:id="LoginButton" layoutX="453.0" layoutY="365.0" mnemonicParsing="false" onAction="#SaveDataAndAllowStudent" style="-fx-border-color: white;" text="lOGIN" textFill="WHITE" />
+        <Button fx:id="LoginButton" layoutX="453.0" layoutY="365.0" mnemonicParsing="false" onAction="#VerifyTeacher" style="-fx-border-color: white;" text="lOGIN" textFill="WHITE" />
         <Label layoutX="344.0" layoutY="244.0" prefHeight="37.0" prefWidth="72.0" text="Name" textFill="WHITE">
             <font>
                 <Font size="24.0" />
@@ -100,7 +100,6 @@
                     </font>
                 </Label>
             </children></Pane>
-        <PasswordField fx:id="pass" layoutX="435.0" layoutY="290.0" prefHeight="26.0" prefWidth="236.0" promptText="type registration number(only digits)" style="-fx-background-color: #1e90ff; -fx-border-color: white; -fx-border-radius: 10;" />
-      <Label alignment="CENTER" layoutX="405.0" layoutY="175.0" prefHeight="57.0" prefWidth="206.0" text="1" />
+        <PasswordField fx:id="pass" layoutX="435.0" layoutY="290.0" prefHeight="26.0" prefWidth="236.0" promptText="type Id Number" style="-fx-background-color: #1e90ff; -fx-border-color: white; -fx-border-radius: 10;" />
     </children>
 </AnchorPane>

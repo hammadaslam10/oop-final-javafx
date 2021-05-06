@@ -1,11 +1,3 @@
-.rect{
--fx-background-color:white;
--fx-border-top-left-radius:15;
--fx-border-top-right-radius:50;
--fx-border-bottom-right-radius:30;
--fx-border-bottom-left-radius:5;
-}
-
 .button{
 -fx-background-color:light_green;
 -fx-font-family:FontAwesome;

@@ -7,6 +7,8 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Ellipse?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="548.0" prefWidth="756.0" style="-fx-background-color: #52FAF5;" stylesheets="@Styles.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="HammadAslam.StudentInfo">
@@ -27,7 +29,7 @@
                         </Label>
                     </children>
                 </Pane>
-                <Button alignment="CENTER" cancelButton="true" graphicTextGap="100.0" lineSpacing="1000.0" mnemonicParsing="false" onAction="#SwitchToSemesterInfo" prefHeight="73.0" prefWidth="227.0" style="-fx-font-size: 20;" stylesheets="Styles.css" text="Semester summary" textAlignment="CENTER" textFill="#f3f8f5">
+                <Button alignment="CENTER" cancelButton="true" graphicTextGap="100.0" lineSpacing="1000.0" mnemonicParsing="false" onAction="#SwitchToSemesterInfo" prefHeight="73.0" prefWidth="227.0" style="-fx-font-size: 20;" stylesheets="Styles.css" text="Main" textAlignment="CENTER" textFill="#f3f8f5">
                     <opaqueInsets>
                         <Insets />
                     </opaqueInsets>
@@ -55,7 +57,7 @@
                         <Insets bottom="70.0" />
                     </VBox.margin>
                 </Button>
-                <Button alignment="TOP_CENTER" cancelButton="true" lineSpacing="1000.0" mnemonicParsing="false" onAction="#SwitchToPolicies" prefHeight="57.0" prefWidth="242.0" stylesheets="Styles.css" text="Policies" textAlignment="CENTER" textFill="WHITE">
+                <Button alignment="TOP_CENTER" cancelButton="true" lineSpacing="1000.0" mnemonicParsing="false" onAction="#SwitchToSemesterInfo" prefHeight="57.0" prefWidth="242.0" style="-fx-font-size: 20;" stylesheets="Styles.css" text="Semester summary" textAlignment="CENTER" textFill="WHITE">
                     <opaqueInsets>
                         <Insets />
                     </opaqueInsets>
@@ -71,7 +73,100 @@
                 </Button>
             </children>
         </VBox>
-        <Label fx:id="cross" layoutX="686.0" layoutY="31.0" onDragDetected="#Crossbutton" prefHeight="36.0" prefWidth="54.0" text="x" />
-        <Label layoutX="265.0" layoutY="98.0" onDragDetected="#SwitchToStudentPortal" text="Studentportal" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="70.0" layoutX="227.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" width="530.0" />
+        <Label fx:id="cross" layoutX="732.0" layoutY="-21.0" onDragDetected="#Crossbutton" prefHeight="12.0" prefWidth="23.0" text="x" textFill="WHITE">
+         <font>
+            <Font size="48.0" />
+         </font></Label>
+      <Label layoutX="433.0" layoutY="9.0" text="Policies" textFill="WHITE">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <Rectangle arcHeight="150.0" arcWidth="150.0" fill="DODGERBLUE" height="446.0" layoutX="265.0" layoutY="89.0" stroke="BLACK" strokeType="INSIDE" width="467.0" />
+      <Ellipse fill="WHITE" layoutX="286.0" layoutY="270.0" radiusX="8.0" radiusY="7.0" stroke="BLACK" strokeType="INSIDE" />
+      <Ellipse fill="WHITE" layoutX="286.0" layoutY="382.0" radiusX="8.0" radiusY="7.0" stroke="BLACK" strokeType="INSIDE" />
+      <Ellipse fill="WHITE" layoutX="286.0" layoutY="357.0" radiusX="8.0" radiusY="7.0" stroke="BLACK" strokeType="INSIDE" />
+      <Ellipse fill="WHITE" layoutX="286.0" layoutY="151.0" radiusX="8.0" radiusY="7.0" stroke="BLACK" strokeType="INSIDE" />
+      <Ellipse fill="WHITE" layoutX="286.0" layoutY="185.0" radiusX="8.0" radiusY="7.0" stroke="BLACK" strokeType="INSIDE" />
+      <Ellipse fill="WHITE" layoutX="286.0" layoutY="214.0" radiusX="8.0" radiusY="7.0" stroke="BLACK" strokeType="INSIDE" />
+      <Ellipse fill="WHITE" layoutX="286.0" layoutY="243.0" radiusX="8.0" radiusY="7.0" stroke="BLACK" strokeType="INSIDE" />
+      <Ellipse fill="WHITE" layoutX="286.0" layoutY="304.0" radiusX="8.0" radiusY="7.0" stroke="BLACK" strokeType="INSIDE" />
+      <Ellipse fill="WHITE" layoutX="286.0" layoutY="464.0" radiusX="8.0" radiusY="7.0" stroke="BLACK" strokeType="INSIDE" />
+      <Label layoutX="300.0" layoutY="141.0" text="states the university's position on a particular issue" textFill="WHITE">
+         <font>
+            <Font name="FontAwesome Regular" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="299.0" layoutY="175.0" text="All students should reach the classroom on time" textFill="WHITE">
+         <font>
+            <Font name="FontAwesome Regular" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="299.0" layoutY="204.0" text="Student Behaviour should be decent" textFill="WHITE">
+         <font>
+            <Font name="FontAwesome Regular" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="300.0" layoutY="233.0" text="Discussing irrelevant arguments in class is prohibited" textFill="WHITE">
+         <font>
+            <Font name="FontAwesome Regular" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="299.0" layoutY="260.0" text="For any mass query communicate your cr first" textFill="WHITE">
+         <font>
+            <Font name="FontAwesome Regular" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="300.0" layoutY="294.0" text="If you get F grade in any subject in 3 semester staright" textFill="WHITE">
+         <font>
+            <Font name="FontAwesome Regular" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="299.0" layoutY="314.0" text="they will expelled from the insitute" textFill="WHITE">
+         <font>
+            <Font name="FontAwesome Regular" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="297.0" layoutY="347.0" text="Doing any irrelevant activity in univeristy is prohibited" textFill="WHITE">
+         <font>
+            <Font name="FontAwesome Regular" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="300.0" layoutY="372.0" text="If someone is doing harrassment Gender favourisim " textFill="WHITE">
+         <font>
+            <Font name="FontAwesome Regular" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="301.0" layoutY="392.0" text="or any type of public offesene will be kick out from " textFill="WHITE">
+         <font>
+            <Font name="FontAwesome Regular" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="300.0" layoutY="412.0" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="301.0" layoutY="416.0" text="the insitute" textFill="WHITE">
+         <font>
+            <Font name="FontAwesome Regular" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="295.0" layoutY="454.0" text="For not attending any class there should be a geniune" textFill="WHITE">
+         <font>
+            <Font name="FontAwesome Regular" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="295.0" layoutY="474.0" text="reason or else this will be noted down in your " textFill="WHITE">
+         <font>
+            <Font name="FontAwesome Regular" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="300.0" layoutY="494.0" text="Character Certificate" textFill="WHITE">
+         <font>
+            <Font name="FontAwesome Regular" size="18.0" />
+         </font>
+      </Label>
     </children>
 </AnchorPane>

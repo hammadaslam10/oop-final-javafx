@@ -6,7 +6,14 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import java.io.File;
+
 public class Main extends Application {
+    /**
+     * Controller wali class ma 3 function hai verify admin ,verify teacher or SaveDataAndAllowStudent ke naam se usme authentication wala karna hai
+     *
+
+     **/
 
     @Override
     public void start(Stage primaryStage) throws Exception{
@@ -27,6 +34,17 @@ public class Main extends Application {
         }
         catch(Exception e){
             e.printStackTrace();
+        }
+    }
+    @Override
+    public void init(){
+        File thefile = new File("./student.txt");
+        if(thefile.length()!=0){
+            StudentController.loadDataStudent();
+        }
+        File file = new File("./teacher.txt");
+        if(file.length()!=0){
+            TeacherController.loadDataTeacher();
         }
     }
 

@@ -32,7 +32,7 @@ public class Controller {
     TextField name;
 
     @FXML
-    private PasswordField pass;
+   PasswordField pass;
 
 
     @FXML
@@ -84,5 +84,22 @@ public class Controller {
         stage.setScene(scene);
         stage.show();
     }
+    public void VerifyAdmin(ActionEvent event) throws IOException{
+        root=FXMLLoader.load(getClass().getResource("AdminOption.fxml"));
+        stage=(Stage)((Node)event.getSource()).getScene().getWindow();
+        scene=new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+
+    }
+    public void VerifyTeacher(ActionEvent event) throws IOException{
+
+        root=FXMLLoader.load(getClass().getResource("TeacherOption.fxml"));
+        stage=(Stage)((Node)event.getSource()).getScene().getWindow();
+        scene=new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
 
 }
