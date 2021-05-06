@@ -74,6 +74,7 @@ public class Controller {
         //ye dekh isme line 87 na charna or error 83 pe araha hai
         String username = name.getText();
         String RegistrationNumber=pass.getText();
+        
         FXMLLoader loader = new FXMLLoader(getClass().getResource("StudentPortal.fxml"));
         root=loader.load();
         StudentInfo studentInfo =loader.getController();
@@ -93,13 +94,10 @@ public class Controller {
 
     }
     public void VerifyTeacher(ActionEvent event) throws IOException{
-
         root=FXMLLoader.load(getClass().getResource("TeacherOption.fxml"));
         stage=(Stage)((Node)event.getSource()).getScene().getWindow();
         scene=new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
-
-
 }
