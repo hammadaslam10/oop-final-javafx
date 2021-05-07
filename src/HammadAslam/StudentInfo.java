@@ -28,25 +28,25 @@ public class StudentInfo  {
      Label NameLabel;
 
     @FXML
-    private Label ReligionLabel;
+     Label ReligionLabel;
 
     @FXML
      Label RegistrationNumberLabel;
 
     @FXML
-    private Label PhoneNumberLabel;
+     Label PhoneNumberLabel;
 
     @FXML
-    private Label CurrentSemLabel;
+     Label CurrentSemLabel;
 
     @FXML
      Label CgpaLabel;
 
     @FXML
-    private Label DepartementLabel;
+     Label DepartementLabel;
 
     @FXML
-    private Label ProgramManagaerLabel;
+     Label ProgramManagaerLabel;
 
     @FXML
     private Label cross;

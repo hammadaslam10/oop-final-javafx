@@ -31,7 +31,6 @@ public class AdminOptionController implements AdminTableControl{
         scene=new Scene(root);
         stage.setScene(scene);
         stage.show();
-
     }
 
     public  void SwitchToStudentTable(ActionEvent event) throws Exception {
