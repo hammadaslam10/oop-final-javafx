@@ -150,6 +150,10 @@ public class StudentController implements Initializable {
     DepartmentCol.setCellValueFactory(cellData -> cellData.getValue().departmentProperty());
     ProgramManagerCol.setCellValueFactory(cellData -> cellData.getValue().programManagerProperty());
 
+<<<<<<< HEAD:TABLE/src/sample/Controller.java
+<<<<<<< HEAD
+=======
+>>>>>>> 08e625c215e3c627778218ea7b0ef9416d87984c:src/HammadAslam/StudentController.java
     StudentTable.setItems(ObservableStudentList);
 
     GenderComboData.add(new String("MALE"));
@@ -164,6 +168,23 @@ public class StudentController implements Initializable {
     StudentTable.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
     StudentTable.setPlaceholder(new Label("YOUR TABLE IS EMPTY"));
     FirstNameField.focusedProperty().addListener(new ChangeListener<Boolean>() {
+<<<<<<< HEAD:TABLE/src/sample/Controller.java
+=======
+    GenderComboData.add(new String("MALE"));
+        GenderComboData.add(new String("FEMALE"));
+        GenderCombo.setItems(GenderComboData);
+        ReligionComboData.add(new String("MUSLIM"));
+        ReligionComboData.add(new String("NON-MUSLIM"));
+        ReligionCombo.setItems(ReligionComboData);
+        AddButton.setDisable(true);
+        DeleteButton.setDisable(true);
+        StudentTable.setEditable(true);
+        StudentTable.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+        StudentTable.setPlaceholder(new Label("YOUR TABLE IS EMPTY"));
+        FirstNameField.focusedProperty().addListener(new ChangeListener<Boolean>() {
+>>>>>>> 729ff8ef47a5f07a4b4e2f2ac7d1f2909342b514
+=======
+>>>>>>> 08e625c215e3c627778218ea7b0ef9416d87984c:src/HammadAslam/StudentController.java
             @Override
             public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
                 if (FirstNameField.isFocused()) {
@@ -181,6 +202,109 @@ public class StudentController implements Initializable {
     });
 
 }
+<<<<<<< HEAD:TABLE/src/sample/Controller.java
+public void handleAddButtonClick(ActionEvent event) {
+<<<<<<< HEAD
+    if (ObservableStudentList.size() < 10) {
+        if(isValidInput(event)){
+            if(GenderCombo.getValue().equals("MALE")){
+                Student student =new Student();
+                student.setFirstName(FirstNameField.getText());
+                student.setLastName(LastNameField.getText());
+                student.setReligion(ReligionCombo.getValue());
+                student.setDepartment(DepartmentField.getText());
+                student.setPhoneNo(Integer.parseInt(PhoneNoField.getText()));
+                student.setRegistrationNo(Integer.parseInt(RegistrationNoField.getText()));
+                student.setCurrentSem(Integer.parseInt(CurrentSemField.getText()));
+                student.setProgramManager(ProgramManagerField.getText());
+                student.setGender(GenderCombo.getValue());
+                student.setCgpa(Double.parseDouble(CgpaField.getText()));
+                ObservableStudentList.add(student);
+                System.out.println(student.toString());
+                FirstNameField.clear();
+                LastNameField.clear();
+                RegistrationNoField.clear();
+                PhoneNoField.clear();
+                CgpaField.clear();
+                CurrentSemField.clear();
+                ProgramManagerField.clear();
+                DepartmentField.clear();
+                GenderCombo.setValue("Gender");
+                ReligionCombo.setValue("Religion");
+            }
+            else if(GenderCombo.getValue().equals("FEMALE")){
+                Student student =new Student();
+                student.setFirstName(FirstNameField.getText());
+                student.setLastName(LastNameField.getText());
+                student.setReligion(ReligionCombo.getValue());
+                student.setDepartment(DepartmentField.getText());
+                student.setPhoneNo(Integer.parseInt(PhoneNoField.getText()));
+                student.setRegistrationNo(Integer.parseInt(RegistrationNoField.getText()));
+                student.setCurrentSem(Integer.parseInt(CurrentSemField.getText()));
+                student.setProgramManager(ProgramManagerField.getText());
+                student.setGender(GenderCombo.getValue());
+                student.setCgpa(Double.parseDouble(CgpaField.getText()));
+                ObservableStudentList.add(student);
+                //System.out.println(ObservableStudentList);
+
+                StudentTable.setItems(ObservableStudentList);
+                //StudentTable.getColumns().addAll(FirstNameCol,LastNameCol,RegistrationNoCol,PhoneNoCol,CurrentSemCol,CgpaCol,DepartmentCol,ProgramManagerCol,GenderCol,ReligionCol);
+
+=======
+        if (ObservableStudentList.size() < 10) {
+if(isValidInput(event)){
+    if(GenderCombo.getValue().equals("MALE")){
+        Student student =new Student();
+        student.setFirstName(FirstNameField.getText());
+        student.setLastName(LastNameField.getText());
+        student.setReligion(ReligionCombo.getValue());
+        student.setDepartment(DepartmentField.getText());
+        student.setPhoneNo(Integer.parseInt(PhoneNoField.getText()));
+        student.setRegistrationNo(Integer.parseInt(RegistrationNoField.getText()));
+        student.setCurrentSem(Integer.parseInt(CurrentSemField.getText()));
+        student.setProgramManager(ProgramManagerField.getText());
+        student.setGender(GenderCombo.getValue());
+        student.setCgpa(Double.parseDouble(CgpaField.getText()));
+        ObservableStudentList.add(student);
+        System.out.println(student.toString());
+        FirstNameField.clear();
+        LastNameField.clear();
+        RegistrationNoField.clear();
+        PhoneNoField.clear();
+        CgpaField.clear();
+        CurrentSemField.clear();
+        ProgramManagerField.clear();
+        DepartmentField.clear();
+        GenderCombo.setValue("Gender");
+        ReligionCombo.setValue("Religion");
+    }
+    if(GenderCombo.getValue().equals("FEMALE")){
+        Student student =new Student();
+        student.setFirstName(FirstNameField.getText());
+        student.setLastName(LastNameField.getText());
+        student.setReligion(ReligionCombo.getValue());
+        student.setDepartment(DepartmentField.getText());
+        student.setPhoneNo(Integer.parseInt(PhoneNoField.getText()));
+        student.setRegistrationNo(Integer.parseInt(RegistrationNoField.getText()));
+        student.setCurrentSem(Integer.parseInt(CurrentSemField.getText()));
+        student.setProgramManager(ProgramManagerField.getText());
+        student.setGender(GenderCombo.getValue());
+        student.setCgpa(Double.parseDouble(CgpaField.getText()));
+        ObservableStudentList.add(student);
+        System.out.println(student.toString());
+        FirstNameField.clear();
+        LastNameField.clear();
+        RegistrationNoField.clear();
+        PhoneNoField.clear();
+        CgpaField.clear();
+        CurrentSemField.clear();
+        ProgramManagerField.clear();
+        DepartmentField.clear();
+        GenderCombo.setValue("Gender");
+        ReligionCombo.setValue("Religion");
+    }
+=======
+>>>>>>> 08e625c215e3c627778218ea7b0ef9416d87984c:src/HammadAslam/StudentController.java
 
     public static void loadDataStudent(){
         try(BufferedReader br = new BufferedReader(new FileReader("./student.txt"))){
@@ -205,6 +329,18 @@ public class StudentController implements Initializable {
             e.printStackTrace();
         }
     }
+<<<<<<< HEAD:TABLE/src/sample/Controller.java
+}else {
+            Alert sizeAlert = new Alert(Alert.AlertType.WARNING, "Warning", ButtonType.OK);
+            Window owner = ((Node) event.getTarget()).getScene().getWindow();
+            sizeAlert.setContentText("You may only hold 10 Students at this time");
+            sizeAlert.initModality(Modality.APPLICATION_MODAL);
+            sizeAlert.initOwner(owner);
+            sizeAlert.showAndWait();
+            if (sizeAlert.getResult() == ButtonType.OK) {
+                sizeAlert.close();
+>>>>>>> 729ff8ef47a5f07a4b4e2f2ac7d1f2909342b514
+=======
 
 public void handleAddButtonClick(ActionEvent event) {
     if (ObservableStudentList.size() < 10) {
@@ -253,6 +389,7 @@ public void handleAddButtonClick(ActionEvent event) {
                 StudentTable.setItems(ObservableStudentList);
                 //StudentTable.getColumns().addAll(FirstNameCol,LastNameCol,RegistrationNoCol,PhoneNoCol,CurrentSemCol,CgpaCol,DepartmentCol,ProgramManagerCol,GenderCol,ReligionCol);
 
+>>>>>>> 08e625c215e3c627778218ea7b0ef9416d87984c:src/HammadAslam/StudentController.java
                 FirstNameField.clear();
                 LastNameField.clear();
                 RegistrationNoField.clear();
@@ -265,6 +402,10 @@ public void handleAddButtonClick(ActionEvent event) {
                 ReligionCombo.setValue("Religion");
             }
         }
+<<<<<<< HEAD:TABLE/src/sample/Controller.java
+<<<<<<< HEAD
+=======
+>>>>>>> 08e625c215e3c627778218ea7b0ef9416d87984c:src/HammadAslam/StudentController.java
     }else {
         Alert sizeAlert = new Alert(Alert.AlertType.WARNING, "Warning", ButtonType.OK);
         Window owner = ((Node) event.getTarget()).getScene().getWindow();
@@ -289,6 +430,16 @@ public void handleAddButtonClick(ActionEvent event) {
 }
     private boolean isValidInput(ActionEvent event) {
         boolean validInput = true;
+<<<<<<< HEAD:TABLE/src/sample/Controller.java
+=======
+
+
+
+    }    private boolean isValidInput(ActionEvent event) {
+        Boolean validInput = true;
+>>>>>>> 729ff8ef47a5f07a4b4e2f2ac7d1f2909342b514
+=======
+>>>>>>> 08e625c215e3c627778218ea7b0ef9416d87984c:src/HammadAslam/StudentController.java
         if(FirstNameField == null || FirstNameField.getText().trim().isEmpty()) {
             validInput = false;
             Alert emptyFirstName = new Alert(Alert.AlertType.WARNING, "Warning", ButtonType.OK);
@@ -420,12 +571,24 @@ public void handleAddButtonClick(ActionEvent event) {
 
         return validInput;
     }
+<<<<<<< HEAD:TABLE/src/sample/Controller.java
+    public void handleSave(ActionEvent event) {
+        Stage secondaryStage = new Stage();
+        FileChooser fileChooser = new FileChooser();
+<<<<<<< HEAD
+        fileChooser.setTitle("Save-Student-Table");
+=======
+        fileChooser.setTitle("Save Student Table");
+>>>>>>> 729ff8ef47a5f07a4b4e2f2ac7d1f2909342b514
+        fileChooser.setInitialDirectory(new File(System.getProperty("user.home")));
+=======
 
     public void handleSave(ActionEvent event) throws IOException {
      //   Stage secondaryStage = new Stage();
        // FileChooser fileChooser = new FileChooser();
        /// fileChooser.setTitle("Save-Student-Table");
         //fileChooser.setInitialDirectory(new File(System.getProperty("user.home")));
+>>>>>>> 08e625c215e3c627778218ea7b0ef9416d87984c:src/HammadAslam/StudentController.java
         if(ObservableStudentList.isEmpty()) {
           //  secondaryStage.initOwner(this.filemenu.getScene().getWindow());
             Alert emptyTableAlert = new Alert(Alert.AlertType.ERROR, "EMPTY TABLE", ButtonType.OK);
@@ -458,6 +621,13 @@ FileWriter append =new FileWriter(ss.getName(),true);
                 outWriter.write(students.toString());
                 outWriter.newLine();
             }
+<<<<<<< HEAD:TABLE/src/sample/Controller.java
+<<<<<<< HEAD
+            //System.out.println(observableStudentList.toString());
+=======
+            System.out.println(observableStudentList.toString());
+>>>>>>> 729ff8ef47a5f07a4b4e2f2ac7d1f2909342b514
+=======
             //System.out.println(observableStudentList.toString());
             Alert SuccessAlert = new Alert(Alert.AlertType.INFORMATION, "Done", ButtonType.OK);
             SuccessAlert.setContentText("Save Succesfull");
@@ -465,6 +635,7 @@ FileWriter append =new FileWriter(ss.getName(),true);
             if(SuccessAlert.getResult() == ButtonType.OK) {
                 SuccessAlert.close();
             }
+>>>>>>> 08e625c215e3c627778218ea7b0ef9416d87984c:src/HammadAslam/StudentController.java
             outWriter.close();
         } catch (IOException e) {
             Alert ioAlert = new Alert(Alert.AlertType.ERROR, "OOPS!", ButtonType.OK);
