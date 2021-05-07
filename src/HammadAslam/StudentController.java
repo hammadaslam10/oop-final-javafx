@@ -25,8 +25,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class StudentController implements Initializable {
-    @FXML
-    private ResourceBundle resources;
+    @FXML    private ResourceBundle resources;
 
     @FXML
     private URL location;
