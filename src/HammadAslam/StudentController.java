@@ -449,10 +449,11 @@ public void handleAddButtonClick(ActionEvent event) {
     }
     public void saveFile(ObservableList<Student> observableStudentList, File ss) {
         try {
-FileWriter append =new FileWriter(ss.getName(),true);
+            FileWriter append =new FileWriter(ss.getName(),true);
          //   BufferedWriter outWriter = new BufferedWriter(new FileWriter(ss));
 //jo comment mara hai upar usse file me data add hoga or neche wala jo chal raha hai abhi us se overwrite
             BufferedWriter outWriter = new BufferedWriter(new FileWriter(ss));
+
 
             for(Student students : observableStudentList) {
                 outWriter.write(students.toString());

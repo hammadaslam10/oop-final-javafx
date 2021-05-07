@@ -4,14 +4,13 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.Parent;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Rectangle;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.scene.Node;
+import javafx.stage.Window;
 
 
 import java.io.*;
@@ -73,12 +72,52 @@ public class Controller {
     public void SaveDataAndAllowStudent(ActionEvent event) throws IOException {
         //ye dekh isme line 87 na charna or error 83 pe araha hai
         String username = name.getText();
-        String RegistrationNumber=pass.getText();
-        
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("StudentPortal.fxml"));
-        root=loader.load();
-        StudentInfo studentInfo =loader.getController();
-        studentInfo.DisplayLogin(username,RegistrationNumber);
+        String RegStrNumber = pass.getText();
+
+        BufferedReader auth = new BufferedReader(new FileReader("./student.txt"));
+        String thisLine="";
+        while((thisLine= auth.readLine())!=null) {
+            String[] split = thisLine.split(" ");
+            String FirstName = split[0];
+            String LastName = split[1];
+            String RegistrationNo = split[2];
+            String PhoneNo = split[3];
+            String CurrentSem = split[4];
+            String Cgpa = split[5];
+            String Department = split[6];
+            String ProgramManager = split[7];
+            String Gender = split[8];
+            String Religion = split[9];
+            if((username.equals(FirstName)) && (RegStrNumber.equals(RegistrationNo))){
+                FXMLLoader load = new FXMLLoader(getClass().getResource("SemesterInfo.fxml"));
+                root=load.load();
+                StudentInfo stdntInfo = load.getController();
+                stdntInfo.NameLabel.setText(username);
+                stdntInfo.RegistrationNumberLabel.setText(RegStrNumber);
+                stdntInfo.PhoneNumberLabel.setText(PhoneNo);
+                stdntInfo.CurrentSemLabel.setText(CurrentSem);
+                stdntInfo.CgpaLabel.setText(Cgpa);
+                stdntInfo.DepartementLabel.setText(Department);
+                stdntInfo.ProgramManagaerLabel.setText(ProgramManager);
+                stdntInfo.ReligionLabel.setText(Religion);
+            } else {
+                Alert invalid = new Alert(Alert.AlertType.WARNING, "Warning", ButtonType.OK);
+                Window owner = ((Node) event.getTarget()).getScene().getWindow();
+                invalid.setContentText("Login invalid, retry");
+                invalid.initModality(Modality.APPLICATION_MODAL);
+                invalid.initOwner(owner);
+                invalid.showAndWait();
+                if (invalid.getResult()==ButtonType.OK){
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("Students.fxml"));
+                    root=loader.load();
+                    StudentController studentInfo =loader.getController();
+                }
+            }
+        }
+//        FXMLLoader loader = new FXMLLoader(getClass().getResource("StudentPortal.fxml"));
+//        root=loader.load();
+//        StudentInfo studentInfo =loader.getController();
+//        studentInfo.DisplayLogin(username,RegStrNumber);
         // root=FXMLLoader.load(getClass().getResource("StudentPortal.fxml"));
         stage=(Stage)((Node)event.getSource()).getScene().getWindow();
         scene=new Scene(root);
