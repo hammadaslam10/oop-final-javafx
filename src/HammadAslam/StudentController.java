@@ -114,63 +114,45 @@ public class StudentController implements Initializable {
 
             }
         });
-    StudentTable.setEditable(true);
-    FirstNameCol.setOnEditCommit(e->FirstNameCol_OnEditCommit(e));
-    LastNameCol.setOnEditCommit(e->LastNameCol_OnEditCommit(e));
-    RegistrationNoCol.setOnEditCommit(e->RegistrationNoCol_OnEditCommit(e));
-    PhoneNoCol.setOnEditCommit(e->PhoneNo_OnEditCommit(e));
-    CurrentSemCol.setOnEditCommit(this::CurrentSemCol_OnEditCommit);
-    CgpaCol.setOnEditCommit(e->CgpaCol_OnEditCommit(e));
-    GenderCol.setOnEditCommit(e-> GenderCol_OnEditCommit(e));
-    ReligionCol.setOnEditCommit(e->ReligionCol_OnEditCommit(e));
-    DepartmentCol.setOnEditCommit(e->DepartmentCol_OnEditCommit(e));
-    ProgramManagerCol.setOnEditCommit(e->ProgramManagerCol_OnEditCommit(e));
+        StudentTable.setEditable(true);
+        FirstNameCol.setOnEditCommit(e->FirstNameCol_OnEditCommit(e));
+        LastNameCol.setOnEditCommit(e->LastNameCol_OnEditCommit(e));
+        RegistrationNoCol.setOnEditCommit(e->RegistrationNoCol_OnEditCommit(e));
+        PhoneNoCol.setOnEditCommit(e->PhoneNo_OnEditCommit(e));
+        CurrentSemCol.setOnEditCommit(this::CurrentSemCol_OnEditCommit);
+        CgpaCol.setOnEditCommit(e->CgpaCol_OnEditCommit(e));
+        GenderCol.setOnEditCommit(e-> GenderCol_OnEditCommit(e));
+        ReligionCol.setOnEditCommit(e->ReligionCol_OnEditCommit(e));
+        DepartmentCol.setOnEditCommit(e->DepartmentCol_OnEditCommit(e));
+        ProgramManagerCol.setOnEditCommit(e->ProgramManagerCol_OnEditCommit(e));
 
-    StudentTable.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
+        StudentTable.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
 
-    FirstNameCol.setCellFactory(TextFieldTableCell.forTableColumn());
-    LastNameCol.setCellFactory(TextFieldTableCell.forTableColumn());
-    RegistrationNoCol.setCellFactory(TextFieldTableCell.forTableColumn(new NumberStringConverter()));
-    PhoneNoCol.setCellFactory(TextFieldTableCell.forTableColumn(new NumberStringConverter()));
-    CurrentSemCol.setCellFactory(TextFieldTableCell.forTableColumn(new NumberStringConverter()));
-    CgpaCol.setCellFactory(TextFieldTableCell.forTableColumn(new NumberStringConverter()));
-    GenderCol.setCellFactory(TextFieldTableCell.forTableColumn());
-    ReligionCol.setCellFactory(TextFieldTableCell.forTableColumn());
-    DepartmentCol.setCellFactory(TextFieldTableCell.forTableColumn());
-    ProgramManagerCol.setCellFactory(TextFieldTableCell.forTableColumn());
+        FirstNameCol.setCellFactory(TextFieldTableCell.forTableColumn());
+        LastNameCol.setCellFactory(TextFieldTableCell.forTableColumn());
+        RegistrationNoCol.setCellFactory(TextFieldTableCell.forTableColumn(new NumberStringConverter()));
+        PhoneNoCol.setCellFactory(TextFieldTableCell.forTableColumn(new NumberStringConverter()));
+        CurrentSemCol.setCellFactory(TextFieldTableCell.forTableColumn(new NumberStringConverter()));
+        CgpaCol.setCellFactory(TextFieldTableCell.forTableColumn(new NumberStringConverter()));
+        GenderCol.setCellFactory(TextFieldTableCell.forTableColumn());
+        ReligionCol.setCellFactory(TextFieldTableCell.forTableColumn());
+        DepartmentCol.setCellFactory(TextFieldTableCell.forTableColumn());
+        ProgramManagerCol.setCellFactory(TextFieldTableCell.forTableColumn());
 
-    FirstNameCol.setCellValueFactory(cellData -> cellData.getValue().firstNameProperty());
-    LastNameCol.setCellValueFactory(cellData -> cellData.getValue().lastNameProperty());
-    RegistrationNoCol.setCellValueFactory(cellData -> cellData.getValue().registrationNoProperty());
-    PhoneNoCol.setCellValueFactory(cellData -> cellData.getValue().phoneNoProperty());
-    CurrentSemCol.setCellValueFactory(cellData -> cellData.getValue().currentSemProperty());
-    CgpaCol.setCellValueFactory(cellData -> cellData.getValue().cgpaProperty());
-    GenderCol.setCellValueFactory(cellData -> cellData.getValue().genderProperty());
-    ReligionCol.setCellValueFactory(cellData -> cellData.getValue().religionProperty());
-    DepartmentCol.setCellValueFactory(cellData -> cellData.getValue().departmentProperty());
-    ProgramManagerCol.setCellValueFactory(cellData -> cellData.getValue().programManagerProperty());
+        FirstNameCol.setCellValueFactory(cellData -> cellData.getValue().firstNameProperty());
+        LastNameCol.setCellValueFactory(cellData -> cellData.getValue().lastNameProperty());
+        RegistrationNoCol.setCellValueFactory(cellData -> cellData.getValue().registrationNoProperty());
+        PhoneNoCol.setCellValueFactory(cellData -> cellData.getValue().phoneNoProperty());
+        CurrentSemCol.setCellValueFactory(cellData -> cellData.getValue().currentSemProperty());
+        CgpaCol.setCellValueFactory(cellData -> cellData.getValue().cgpaProperty());
+        GenderCol.setCellValueFactory(cellData -> cellData.getValue().genderProperty());
+        ReligionCol.setCellValueFactory(cellData -> cellData.getValue().religionProperty());
+        DepartmentCol.setCellValueFactory(cellData -> cellData.getValue().departmentProperty());
+        ProgramManagerCol.setCellValueFactory(cellData -> cellData.getValue().programManagerProperty());
 
-<<<<<<< HEAD:TABLE/src/sample/Controller.java
-<<<<<<< HEAD
-=======
->>>>>>> 08e625c215e3c627778218ea7b0ef9416d87984c:src/HammadAslam/StudentController.java
-    StudentTable.setItems(ObservableStudentList);
+        StudentTable.setItems(ObservableStudentList);
 
-    GenderComboData.add(new String("MALE"));
-    GenderComboData.add(new String("FEMALE"));
-    GenderCombo.setItems(GenderComboData);
-    ReligionComboData.add(new String("MUSLIM"));
-    ReligionComboData.add(new String("NON-MUSLIM"));
-    ReligionCombo.setItems(ReligionComboData);
-    AddButton.setDisable(true);
-    DeleteButton.setDisable(true);
-    StudentTable.setEditable(true);
-    StudentTable.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
-    StudentTable.setPlaceholder(new Label("YOUR TABLE IS EMPTY"));
-    FirstNameField.focusedProperty().addListener(new ChangeListener<Boolean>() {
-<<<<<<< HEAD:TABLE/src/sample/Controller.java
-=======
-    GenderComboData.add(new String("MALE"));
+        GenderComboData.add(new String("MALE"));
         GenderComboData.add(new String("FEMALE"));
         GenderCombo.setItems(GenderComboData);
         ReligionComboData.add(new String("MUSLIM"));
@@ -182,9 +164,6 @@ public class StudentController implements Initializable {
         StudentTable.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
         StudentTable.setPlaceholder(new Label("YOUR TABLE IS EMPTY"));
         FirstNameField.focusedProperty().addListener(new ChangeListener<Boolean>() {
->>>>>>> 729ff8ef47a5f07a4b4e2f2ac7d1f2909342b514
-=======
->>>>>>> 08e625c215e3c627778218ea7b0ef9416d87984c:src/HammadAslam/StudentController.java
             @Override
             public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
                 if (FirstNameField.isFocused()) {
@@ -193,118 +172,14 @@ public class StudentController implements Initializable {
             }
         });
         StudentTable.focusedProperty().addListener(new ChangeListener<Boolean>() {
-        @Override
-        public void changed(ObservableValue<? extends Boolean> Observable, Boolean oldValue, Boolean newValue) {
-            if (StudentTable.isFocused()) {
-                DeleteButton.setDisable(false);
+            @Override
+            public void changed(ObservableValue<? extends Boolean> Observable, Boolean oldValue, Boolean newValue) {
+                if (StudentTable.isFocused()) {
+                    DeleteButton.setDisable(false);
+                }
             }
-        }
-    });
-
-}
-<<<<<<< HEAD:TABLE/src/sample/Controller.java
-public void handleAddButtonClick(ActionEvent event) {
-<<<<<<< HEAD
-    if (ObservableStudentList.size() < 10) {
-        if(isValidInput(event)){
-            if(GenderCombo.getValue().equals("MALE")){
-                Student student =new Student();
-                student.setFirstName(FirstNameField.getText());
-                student.setLastName(LastNameField.getText());
-                student.setReligion(ReligionCombo.getValue());
-                student.setDepartment(DepartmentField.getText());
-                student.setPhoneNo(Integer.parseInt(PhoneNoField.getText()));
-                student.setRegistrationNo(Integer.parseInt(RegistrationNoField.getText()));
-                student.setCurrentSem(Integer.parseInt(CurrentSemField.getText()));
-                student.setProgramManager(ProgramManagerField.getText());
-                student.setGender(GenderCombo.getValue());
-                student.setCgpa(Double.parseDouble(CgpaField.getText()));
-                ObservableStudentList.add(student);
-                System.out.println(student.toString());
-                FirstNameField.clear();
-                LastNameField.clear();
-                RegistrationNoField.clear();
-                PhoneNoField.clear();
-                CgpaField.clear();
-                CurrentSemField.clear();
-                ProgramManagerField.clear();
-                DepartmentField.clear();
-                GenderCombo.setValue("Gender");
-                ReligionCombo.setValue("Religion");
-            }
-            else if(GenderCombo.getValue().equals("FEMALE")){
-                Student student =new Student();
-                student.setFirstName(FirstNameField.getText());
-                student.setLastName(LastNameField.getText());
-                student.setReligion(ReligionCombo.getValue());
-                student.setDepartment(DepartmentField.getText());
-                student.setPhoneNo(Integer.parseInt(PhoneNoField.getText()));
-                student.setRegistrationNo(Integer.parseInt(RegistrationNoField.getText()));
-                student.setCurrentSem(Integer.parseInt(CurrentSemField.getText()));
-                student.setProgramManager(ProgramManagerField.getText());
-                student.setGender(GenderCombo.getValue());
-                student.setCgpa(Double.parseDouble(CgpaField.getText()));
-                ObservableStudentList.add(student);
-                //System.out.println(ObservableStudentList);
-
-                StudentTable.setItems(ObservableStudentList);
-                //StudentTable.getColumns().addAll(FirstNameCol,LastNameCol,RegistrationNoCol,PhoneNoCol,CurrentSemCol,CgpaCol,DepartmentCol,ProgramManagerCol,GenderCol,ReligionCol);
-
-=======
-        if (ObservableStudentList.size() < 10) {
-if(isValidInput(event)){
-    if(GenderCombo.getValue().equals("MALE")){
-        Student student =new Student();
-        student.setFirstName(FirstNameField.getText());
-        student.setLastName(LastNameField.getText());
-        student.setReligion(ReligionCombo.getValue());
-        student.setDepartment(DepartmentField.getText());
-        student.setPhoneNo(Integer.parseInt(PhoneNoField.getText()));
-        student.setRegistrationNo(Integer.parseInt(RegistrationNoField.getText()));
-        student.setCurrentSem(Integer.parseInt(CurrentSemField.getText()));
-        student.setProgramManager(ProgramManagerField.getText());
-        student.setGender(GenderCombo.getValue());
-        student.setCgpa(Double.parseDouble(CgpaField.getText()));
-        ObservableStudentList.add(student);
-        System.out.println(student.toString());
-        FirstNameField.clear();
-        LastNameField.clear();
-        RegistrationNoField.clear();
-        PhoneNoField.clear();
-        CgpaField.clear();
-        CurrentSemField.clear();
-        ProgramManagerField.clear();
-        DepartmentField.clear();
-        GenderCombo.setValue("Gender");
-        ReligionCombo.setValue("Religion");
+        });
     }
-    if(GenderCombo.getValue().equals("FEMALE")){
-        Student student =new Student();
-        student.setFirstName(FirstNameField.getText());
-        student.setLastName(LastNameField.getText());
-        student.setReligion(ReligionCombo.getValue());
-        student.setDepartment(DepartmentField.getText());
-        student.setPhoneNo(Integer.parseInt(PhoneNoField.getText()));
-        student.setRegistrationNo(Integer.parseInt(RegistrationNoField.getText()));
-        student.setCurrentSem(Integer.parseInt(CurrentSemField.getText()));
-        student.setProgramManager(ProgramManagerField.getText());
-        student.setGender(GenderCombo.getValue());
-        student.setCgpa(Double.parseDouble(CgpaField.getText()));
-        ObservableStudentList.add(student);
-        System.out.println(student.toString());
-        FirstNameField.clear();
-        LastNameField.clear();
-        RegistrationNoField.clear();
-        PhoneNoField.clear();
-        CgpaField.clear();
-        CurrentSemField.clear();
-        ProgramManagerField.clear();
-        DepartmentField.clear();
-        GenderCombo.setValue("Gender");
-        ReligionCombo.setValue("Religion");
-    }
-=======
->>>>>>> 08e625c215e3c627778218ea7b0ef9416d87984c:src/HammadAslam/StudentController.java
 
     public static void loadDataStudent(){
         try(BufferedReader br = new BufferedReader(new FileReader("./student.txt"))){
@@ -329,8 +204,65 @@ if(isValidInput(event)){
             e.printStackTrace();
         }
     }
-<<<<<<< HEAD:TABLE/src/sample/Controller.java
-}else {
+    public void handleAddButtonClick(ActionEvent event) {
+        if (ObservableStudentList.size() < 10) {
+            if(isValidInput(event)){
+                if(GenderCombo.getValue().equals("MALE")){
+                    Student student =new Student();
+                    student.setFirstName(FirstNameField.getText());
+                    student.setLastName(LastNameField.getText());
+                    student.setReligion(ReligionCombo.getValue());
+                    student.setDepartment(DepartmentField.getText());
+                    student.setPhoneNo(Double.parseDouble(PhoneNoField.getText()));
+                    student.setRegistrationNo(Integer.parseInt(RegistrationNoField.getText()));
+                    student.setCurrentSem(Integer.parseInt(CurrentSemField.getText()));
+                    student.setProgramManager(ProgramManagerField.getText());
+                    student.setGender(GenderCombo.getValue());
+                    student.setCgpa(Double.parseDouble(CgpaField.getText()));
+                    ObservableStudentList.add(student);
+                    StudentTable.setItems(ObservableStudentList);
+                    System.out.println(student.toString());
+                    FirstNameField.clear();
+                    LastNameField.clear();
+                    RegistrationNoField.clear();
+                    PhoneNoField.clear();
+                    CgpaField.clear();
+                    CurrentSemField.clear();
+                    ProgramManagerField.clear();
+                    DepartmentField.clear();
+                    GenderCombo.setValue("Gender");
+                    ReligionCombo.setValue("Religion");
+                }
+                else if(GenderCombo.getValue().equals("FEMALE")){
+                    Student student =new Student();
+                    student.setFirstName(FirstNameField.getText());
+                    student.setLastName(LastNameField.getText());
+                    student.setReligion(ReligionCombo.getValue());
+                    student.setDepartment(DepartmentField.getText());
+                    student.setPhoneNo(Double.parseDouble(PhoneNoField.getText()));
+                    student.setRegistrationNo(Integer.parseInt(RegistrationNoField.getText()));
+                    student.setCurrentSem(Integer.parseInt(CurrentSemField.getText()));
+                    student.setProgramManager(ProgramManagerField.getText());
+                    student.setGender(GenderCombo.getValue());
+                    student.setCgpa(Double.parseDouble(CgpaField.getText()));
+                    ObservableStudentList.add(student);
+                    //System.out.println(ObservableStudentList);
+
+                    StudentTable.setItems(ObservableStudentList);
+                    //StudentTable.getColumns().addAll(FirstNameCol,LastNameCol,RegistrationNoCol,PhoneNoCol,CurrentSemCol,CgpaCol,DepartmentCol,ProgramManagerCol,GenderCol,ReligionCol);
+                    FirstNameField.clear();
+                    LastNameField.clear();
+                    RegistrationNoField.clear();
+                    PhoneNoField.clear();
+                    CgpaField.clear();
+                    CurrentSemField.clear();
+                    ProgramManagerField.clear();
+                    DepartmentField.clear();
+                    GenderCombo.setValue("Gender");
+                    ReligionCombo.setValue("Religion");
+                }
+            }
+        }else {
             Alert sizeAlert = new Alert(Alert.AlertType.WARNING, "Warning", ButtonType.OK);
             Window owner = ((Node) event.getTarget()).getScene().getWindow();
             sizeAlert.setContentText("You may only hold 10 Students at this time");
@@ -339,27 +271,6 @@ if(isValidInput(event)){
             sizeAlert.showAndWait();
             if (sizeAlert.getResult() == ButtonType.OK) {
                 sizeAlert.close();
->>>>>>> 729ff8ef47a5f07a4b4e2f2ac7d1f2909342b514
-=======
-
-public void handleAddButtonClick(ActionEvent event) {
-    if (ObservableStudentList.size() < 10) {
-        if(isValidInput(event)){
-            if(GenderCombo.getValue().equals("MALE")){
-                Student student =new Student();
-                student.setFirstName(FirstNameField.getText());
-                student.setLastName(LastNameField.getText());
-                student.setReligion(ReligionCombo.getValue());
-                student.setDepartment(DepartmentField.getText());
-                student.setPhoneNo(Double.parseDouble(PhoneNoField.getText()));
-                student.setRegistrationNo(Integer.parseInt(RegistrationNoField.getText()));
-                student.setCurrentSem(Integer.parseInt(CurrentSemField.getText()));
-                student.setProgramManager(ProgramManagerField.getText());
-                student.setGender(GenderCombo.getValue());
-                student.setCgpa(Double.parseDouble(CgpaField.getText()));
-                ObservableStudentList.add(student);
-                StudentTable.setItems(ObservableStudentList);
-                System.out.println(student.toString());
                 FirstNameField.clear();
                 LastNameField.clear();
                 RegistrationNoField.clear();
@@ -371,75 +282,10 @@ public void handleAddButtonClick(ActionEvent event) {
                 GenderCombo.setValue("Gender");
                 ReligionCombo.setValue("Religion");
             }
-            else if(GenderCombo.getValue().equals("FEMALE")){
-                Student student =new Student();
-                student.setFirstName(FirstNameField.getText());
-                student.setLastName(LastNameField.getText());
-                student.setReligion(ReligionCombo.getValue());
-                student.setDepartment(DepartmentField.getText());
-                student.setPhoneNo(Double.parseDouble(PhoneNoField.getText()));
-                student.setRegistrationNo(Integer.parseInt(RegistrationNoField.getText()));
-                student.setCurrentSem(Integer.parseInt(CurrentSemField.getText()));
-                student.setProgramManager(ProgramManagerField.getText());
-                student.setGender(GenderCombo.getValue());
-                student.setCgpa(Double.parseDouble(CgpaField.getText()));
-                ObservableStudentList.add(student);
-                //System.out.println(ObservableStudentList);
-
-                StudentTable.setItems(ObservableStudentList);
-                //StudentTable.getColumns().addAll(FirstNameCol,LastNameCol,RegistrationNoCol,PhoneNoCol,CurrentSemCol,CgpaCol,DepartmentCol,ProgramManagerCol,GenderCol,ReligionCol);
-
->>>>>>> 08e625c215e3c627778218ea7b0ef9416d87984c:src/HammadAslam/StudentController.java
-                FirstNameField.clear();
-                LastNameField.clear();
-                RegistrationNoField.clear();
-                PhoneNoField.clear();
-                CgpaField.clear();
-                CurrentSemField.clear();
-                ProgramManagerField.clear();
-                DepartmentField.clear();
-                GenderCombo.setValue("Gender");
-                ReligionCombo.setValue("Religion");
-            }
-        }
-<<<<<<< HEAD:TABLE/src/sample/Controller.java
-<<<<<<< HEAD
-=======
->>>>>>> 08e625c215e3c627778218ea7b0ef9416d87984c:src/HammadAslam/StudentController.java
-    }else {
-        Alert sizeAlert = new Alert(Alert.AlertType.WARNING, "Warning", ButtonType.OK);
-        Window owner = ((Node) event.getTarget()).getScene().getWindow();
-        sizeAlert.setContentText("You may only hold 10 Students at this time");
-        sizeAlert.initModality(Modality.APPLICATION_MODAL);
-        sizeAlert.initOwner(owner);
-        sizeAlert.showAndWait();
-        if (sizeAlert.getResult() == ButtonType.OK) {
-            sizeAlert.close();
-            FirstNameField.clear();
-            LastNameField.clear();
-            RegistrationNoField.clear();
-            PhoneNoField.clear();
-            CgpaField.clear();
-            CurrentSemField.clear();
-            ProgramManagerField.clear();
-            DepartmentField.clear();
-            GenderCombo.setValue("Gender");
-            ReligionCombo.setValue("Religion");
         }
     }
-}
     private boolean isValidInput(ActionEvent event) {
-        boolean validInput = true;
-<<<<<<< HEAD:TABLE/src/sample/Controller.java
-=======
-
-
-
-    }    private boolean isValidInput(ActionEvent event) {
         Boolean validInput = true;
->>>>>>> 729ff8ef47a5f07a4b4e2f2ac7d1f2909342b514
-=======
->>>>>>> 08e625c215e3c627778218ea7b0ef9416d87984c:src/HammadAslam/StudentController.java
         if(FirstNameField == null || FirstNameField.getText().trim().isEmpty()) {
             validInput = false;
             Alert emptyFirstName = new Alert(Alert.AlertType.WARNING, "Warning", ButtonType.OK);
@@ -571,26 +417,14 @@ public void handleAddButtonClick(ActionEvent event) {
 
         return validInput;
     }
-<<<<<<< HEAD:TABLE/src/sample/Controller.java
-    public void handleSave(ActionEvent event) {
-        Stage secondaryStage = new Stage();
-        FileChooser fileChooser = new FileChooser();
-<<<<<<< HEAD
-        fileChooser.setTitle("Save-Student-Table");
-=======
-        fileChooser.setTitle("Save Student Table");
->>>>>>> 729ff8ef47a5f07a4b4e2f2ac7d1f2909342b514
-        fileChooser.setInitialDirectory(new File(System.getProperty("user.home")));
-=======
 
     public void handleSave(ActionEvent event) throws IOException {
-     //   Stage secondaryStage = new Stage();
-       // FileChooser fileChooser = new FileChooser();
-       /// fileChooser.setTitle("Save-Student-Table");
+        //   Stage secondaryStage = new Stage();
+        // FileChooser fileChooser = new FileChooser();
+        /// fileChooser.setTitle("Save-Student-Table");
         //fileChooser.setInitialDirectory(new File(System.getProperty("user.home")));
->>>>>>> 08e625c215e3c627778218ea7b0ef9416d87984c:src/HammadAslam/StudentController.java
         if(ObservableStudentList.isEmpty()) {
-          //  secondaryStage.initOwner(this.filemenu.getScene().getWindow());
+            //  secondaryStage.initOwner(this.filemenu.getScene().getWindow());
             Alert emptyTableAlert = new Alert(Alert.AlertType.ERROR, "EMPTY TABLE", ButtonType.OK);
             emptyTableAlert.setContentText("You have nothing to save");
             emptyTableAlert.initModality(Modality.APPLICATION_MODAL);
@@ -601,7 +435,7 @@ public void handleAddButtonClick(ActionEvent event) {
             }
         }
         else {
-         //   File file = fileChooser.showSaveDialog(secondaryStage);
+            //   File file = fileChooser.showSaveDialog(secondaryStage);
             File ss = new File("student.txt");
             if(!ss.exists()){
                 ss.createNewFile();
@@ -613,7 +447,7 @@ public void handleAddButtonClick(ActionEvent event) {
     public void saveFile(ObservableList<Student> observableStudentList, File ss) {
         try {
             FileWriter append =new FileWriter(ss.getName(),true);
-         //   BufferedWriter outWriter = new BufferedWriter(new FileWriter(ss));
+            //   BufferedWriter outWriter = new BufferedWriter(new FileWriter(ss));
 //jo comment mara hai upar usse file me data add hoga or neche wala jo chal raha hai abhi us se overwrite
             BufferedWriter outWriter = new BufferedWriter(new FileWriter(ss));
 
@@ -622,13 +456,9 @@ public void handleAddButtonClick(ActionEvent event) {
                 outWriter.write(students.toString());
                 outWriter.newLine();
             }
-<<<<<<< HEAD:TABLE/src/sample/Controller.java
-<<<<<<< HEAD
             //System.out.println(observableStudentList.toString());
-=======
+
             System.out.println(observableStudentList.toString());
->>>>>>> 729ff8ef47a5f07a4b4e2f2ac7d1f2909342b514
-=======
             //System.out.println(observableStudentList.toString());
             Alert SuccessAlert = new Alert(Alert.AlertType.INFORMATION, "Done", ButtonType.OK);
             SuccessAlert.setContentText("Save Succesfull");
@@ -636,7 +466,6 @@ public void handleAddButtonClick(ActionEvent event) {
             if(SuccessAlert.getResult() == ButtonType.OK) {
                 SuccessAlert.close();
             }
->>>>>>> 08e625c215e3c627778218ea7b0ef9416d87984c:src/HammadAslam/StudentController.java
             outWriter.close();
         } catch (IOException e) {
             Alert ioAlert = new Alert(Alert.AlertType.ERROR, "OOPS!", ButtonType.OK);
@@ -706,11 +535,11 @@ public void handleAddButtonClick(ActionEvent event) {
 
 
 
-        public void CgpaCol_OnEditCommit(Event e) {
-            TableColumn.CellEditEvent<Student, Double> cellEditEvent;
-            cellEditEvent = (TableColumn.CellEditEvent<Student,Double>) e;
-            Student student = cellEditEvent.getRowValue();
-            student.setCgpa(cellEditEvent.getNewValue());
+    public void CgpaCol_OnEditCommit(Event e) {
+        TableColumn.CellEditEvent<Student, Double> cellEditEvent;
+        cellEditEvent = (TableColumn.CellEditEvent<Student,Double>) e;
+        Student student = cellEditEvent.getRowValue();
+        student.setCgpa(cellEditEvent.getNewValue());
     }
 
 
@@ -777,7 +606,7 @@ public void handleAddButtonClick(ActionEvent event) {
     }
 
 
-   public void ReligionCol_OnEditCommit(Event e) {
+    public void ReligionCol_OnEditCommit(Event e) {
         TableColumn.CellEditEvent<Student, String> cellEditEvent;
         cellEditEvent = (TableColumn.CellEditEvent<Student, String>) e;
         Student student = cellEditEvent.getRowValue();
