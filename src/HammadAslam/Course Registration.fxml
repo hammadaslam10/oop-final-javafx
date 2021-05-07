@@ -28,7 +28,7 @@
                         </Label>
                     </children>
                 </Pane>
-                <Button alignment="CENTER" cancelButton="true" graphicTextGap="100.0" lineSpacing="1000.0" mnemonicParsing="false" onAction="#SwitchToSemesterInfo" prefHeight="73.0" prefWidth="227.0" style="-fx-font-size: 20;" stylesheets="Styles.css" text="Semester summary" textAlignment="CENTER" textFill="#f3f8f5">
+                <Button alignment="CENTER" cancelButton="true" graphicTextGap="100.0" lineSpacing="1000.0" mnemonicParsing="false" onAction="#SwitchToStudentPortal" prefHeight="73.0" prefWidth="227.0" style="-fx-font-size: 20;" stylesheets="Styles.css" text="Main" textAlignment="CENTER" textFill="#f3f8f5">
                     <opaqueInsets>
                         <Insets />
                     </opaqueInsets>
@@ -42,7 +42,7 @@
                         <Insets bottom="70.0" />
                     </VBox.margin>
                 </Button>
-                <Button alignment="CENTER" cancelButton="true" graphicTextGap="100.0" lineSpacing="1000.0" mnemonicParsing="false" onAction="#SwitchToCourseRegistration" prefHeight="49.0" prefWidth="225.0" style="-fx-font-size: 20;" stylesheets="Styles.css" text="Course registration" textAlignment="CENTER" textFill="WHITE">
+                <Button alignment="CENTER" cancelButton="true" graphicTextGap="100.0" lineSpacing="1000.0" mnemonicParsing="false" onAction="#SwitchToSemesterInfo" prefHeight="49.0" prefWidth="225.0" style="-fx-font-size: 20;" stylesheets="Styles.css" text="Semester summary" textAlignment="CENTER" textFill="WHITE">
                     <opaqueInsets>
                         <Insets />
                     </opaqueInsets>
@@ -76,7 +76,7 @@
             <font>
                 <Font size="36.0" />
             </font></Label>
-        <Button layoutX="227.0" mnemonicParsing="false" onAction="#SwitchToStudentPortal" prefHeight="27.0" prefWidth="65.0" text="&lt;" textFill="WHITE" />
+        <Button layoutX="227.0" mnemonicParsing="false" onAction="#SwitchToStudent" prefHeight="27.0" prefWidth="65.0" text="&lt;" textFill="WHITE" />
         <Label fx:id="InfoLabel2" alignment="CENTER" layoutX="315.0" layoutY="129.0" prefHeight="35.0" prefWidth="145.0" text="Label" textFill="WHITE">
             <font>
                 <Font size="24.0" />

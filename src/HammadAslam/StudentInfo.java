@@ -19,17 +19,34 @@ import java.lang.reflect.Method;
 
 import java.io.IOException;
 
-public class StudentInfo {
+public class StudentInfo  {
     private Stage stage;
     private Scene scene;
     private Parent root;
-    @FXML
-     Label InfoLabel1;
-    @FXML
-    private Label InfoLabel2;
 
     @FXML
-    private Label InfoLabel3;
+     Label NameLabel;
+
+    @FXML
+    private Label ReligionLabel;
+
+    @FXML
+     Label RegistrationNumberLabel;
+
+    @FXML
+    private Label PhoneNumberLabel;
+
+    @FXML
+    private Label CurrentSemLabel;
+
+    @FXML
+     Label CgpaLabel;
+
+    @FXML
+    private Label DepartementLabel;
+
+    @FXML
+    private Label ProgramManagaerLabel;
 
     @FXML
     private Label cross;
@@ -59,19 +76,23 @@ public class StudentInfo {
     }
 
     public void SwitchToStudentPortal(ActionEvent event) throws Exception{
-        root=FXMLLoader.load(getClass().getResource("Students.fxml"));
+        root=FXMLLoader.load(getClass().getResource("StudentsPortal.fxml"));
         stage=(Stage)((Node)event.getSource()).getScene().getWindow();
         scene=new Scene(root);
         stage.setScene(scene);
         stage.show();
 
+
     }
-    public void SwitchToHome(ActionEvent event) throws Exception{
-        root=FXMLLoader.load(getClass().getResource("HomePage.fxml"));
+    public void SwitchToStudent(ActionEvent event) throws Exception{
+
+        root=FXMLLoader.load(getClass().getResource("Student.fxml"));
         stage=(Stage)((Node)event.getSource()).getScene().getWindow();
         scene=new Scene(root);
         stage.setScene(scene);
         stage.show();
+
+
 
     }
     @FXML
@@ -79,13 +100,13 @@ public class StudentInfo {
         if(event.getSource() ==cross)
             System.exit(0);
     }
-
     void DisplayLogin(String Username, String Pass){
 
-        InfoLabel1.setText("Welcome Back:- "+Username);
+
+        this.NameLabel.setText("Welcome Back:- "+Username);
         //ye dekh
-        InfoLabel2.setText("Registration Number Is:- "+Pass);
-        InfoLabel3.setText("Your Are Studying in 2nd Semester");
+        this.RegistrationNumberLabel.setText("Registration Number Is:- "+Pass);
+        this.CgpaLabel.setText("Your Are Studying in 2nd Semester");
     }
 
 

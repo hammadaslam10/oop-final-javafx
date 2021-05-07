@@ -75,17 +75,17 @@
          <font>
             <Font size="36.0" />
          </font></Label>
-      <Button layoutX="227.0" mnemonicParsing="false" onAction="#SwitchToStudentPortal" prefHeight="27.0" prefWidth="65.0" text="&lt;" textFill="WHITE" />
-      <Label fx:id="InfoLabel1" alignment="CENTER" layoutX="227.0" layoutY="123.0" prefHeight="53.0" prefWidth="529.0" text="Label" textFill="WHITE">
+      <Button layoutX="227.0" mnemonicParsing="false" onAction="#SwitchToStudent" prefHeight="27.0" prefWidth="65.0" text="&lt;" textFill="WHITE" />
+      <Label fx:id="NameLabel" alignment="CENTER" layoutX="227.0" layoutY="123.0" prefHeight="53.0" prefWidth="529.0" text="Label" textFill="WHITE">
          <font>
             <Font size="24.0" />
          </font></Label>
-      <Label fx:id="InfoLabel2" alignment="CENTER" layoutX="227.0" layoutY="228.0" prefHeight="53.0" prefWidth="529.0" text="Label" textFill="WHITE">
+      <Label fx:id="RegistrationNumberLabel" alignment="CENTER" layoutX="227.0" layoutY="228.0" prefHeight="53.0" prefWidth="529.0" text="Label" textFill="WHITE">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label fx:id="InfoLabel3" alignment="CENTER" layoutX="227.0" layoutY="350.0" prefHeight="53.0" prefWidth="529.0" text="Label" textFill="WHITE">
+      <Label fx:id="CgpaLabel" alignment="CENTER" layoutX="227.0" layoutY="350.0" prefHeight="53.0" prefWidth="529.0" text="Label" textFill="WHITE">
          <font>
             <Font size="24.0" />
          </font>
