@@ -14,6 +14,7 @@ import javafx.stage.Window;
 
 
 import java.io.*;
+import java.util.concurrent.locks.ReentrantLock;
 
 
 public class Controller {
@@ -76,6 +77,7 @@ public class Controller {
 
         BufferedReader auth = new BufferedReader(new FileReader("./student.txt"));
         String thisLine="";
+
         while((thisLine= auth.readLine())!=null) {
             String[] split = thisLine.split(" ");
             String FirstName = split[0];
@@ -88,10 +90,13 @@ public class Controller {
             String ProgramManager = split[7];
             String Gender = split[8];
             String Religion = split[9];
+
             if((username.equals(FirstName)) && (RegStrNumber.equals(RegistrationNo))){
+
                 FXMLLoader load = new FXMLLoader(getClass().getResource("SemesterInfo.fxml"));
                 root=load.load();
                 StudentInfo stdntInfo = load.getController();
+
                 stdntInfo.NameLabel.setText(username);
                 stdntInfo.RegistrationNumberLabel.setText(RegStrNumber);
                 stdntInfo.PhoneNumberLabel.setText(PhoneNo);
@@ -100,6 +105,12 @@ public class Controller {
                 stdntInfo.DepartementLabel.setText(Department);
                 stdntInfo.ProgramManagaerLabel.setText(ProgramManager);
                 stdntInfo.ReligionLabel.setText(Religion);
+
+                File thefile = new File("./tempStdnt.txt");
+                BufferedWriter bw = new BufferedWriter(new FileWriter(thefile));
+                String data = addAll(username,RegStrNumber,PhoneNo,CurrentSem,Cgpa,Department,ProgramManager,Religion);
+                bw.write(data);
+                bw.close();
             } else {
                 Alert invalid = new Alert(Alert.AlertType.WARNING, "Warning", ButtonType.OK);
                 Window owner = ((Node) event.getTarget()).getScene().getWindow();
@@ -114,15 +125,13 @@ public class Controller {
                 }
             }
         }
-//        FXMLLoader loader = new FXMLLoader(getClass().getResource("StudentPortal.fxml"));
-//        root=loader.load();
-//        StudentInfo studentInfo =loader.getController();
-//        studentInfo.DisplayLogin(username,RegStrNumber);
-        // root=FXMLLoader.load(getClass().getResource("StudentPortal.fxml"));
         stage=(Stage)((Node)event.getSource()).getScene().getWindow();
         scene=new Scene(root);
         stage.setScene(scene);
         stage.show();
+    }
+    public String addAll(String firstName, String regNum, String phNo, String currentSem, String cgpa, String department, String programManager, String Religion){
+        return firstName+" "+regNum+" "+phNo+" "+currentSem+" "+cgpa+" "+department+" "+programManager+" "+Religion;
     }
     public void VerifyAdmin(ActionEvent event) throws IOException{
         root=FXMLLoader.load(getClass().getResource("AdminOption.fxml"));
@@ -130,7 +139,6 @@ public class Controller {
         scene=new Scene(root);
         stage.setScene(scene);
         stage.show();
-
     }
     public void VerifyTeacher(ActionEvent event) throws IOException{
         root=FXMLLoader.load(getClass().getResource("TeacherOption.fxml"));
