@@ -14,6 +14,9 @@ import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.scene.Node;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
@@ -51,7 +54,33 @@ public class StudentInfo  {
     @FXML
     private Label cross;
     public void SwitchToSemesterInfo(ActionEvent event) throws Exception{
-        root=FXMLLoader.load(getClass().getResource("SemesterInfo.fxml"));
+
+        BufferedReader br = new BufferedReader(new FileReader("./tempStdnt.txt"));
+        String thisLine = br.readLine();
+        String[] stdntData = thisLine.split(" ");
+        String username = stdntData[0];
+        String RegStrNumber = stdntData[1];
+        String PhoneNo = stdntData[2];
+        String CurrentSem = stdntData[3];
+        String Cgpa = stdntData[4];
+        String Department = stdntData[5];
+        String ProgramManager = stdntData[6];
+        String Religion = stdntData[7];
+
+        FXMLLoader load = new FXMLLoader(getClass().getResource("SemesterInfo.fxml"));
+        root=load.load();
+        StudentInfo stdntInfo = load.getController();
+
+        stdntInfo.NameLabel.setText(username);
+        stdntInfo.RegistrationNumberLabel.setText(RegStrNumber);
+        stdntInfo.PhoneNumberLabel.setText(PhoneNo);
+        stdntInfo.CurrentSemLabel.setText(CurrentSem);
+        stdntInfo.CgpaLabel.setText(Cgpa);
+        stdntInfo.DepartementLabel.setText(Department);
+        stdntInfo.ProgramManagaerLabel.setText(ProgramManager);
+        stdntInfo.ReligionLabel.setText(Religion);
+
+
         stage=(Stage)((Node)event.getSource()).getScene().getWindow();
         scene=new Scene(root);
         stage.setScene(scene);
@@ -64,7 +93,6 @@ public class StudentInfo  {
         scene=new Scene(root);
         stage.setScene(scene);
         stage.show();
-
     }
     public void SwitchToPolicies(ActionEvent event) throws Exception{
         root=FXMLLoader.load(getClass().getResource("Policies.fxml"));
