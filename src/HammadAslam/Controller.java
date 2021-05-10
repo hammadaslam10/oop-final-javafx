@@ -27,6 +27,10 @@ public class Controller {
     private Rectangle rect;
     @FXML
     private Label cross;
+    @FXML
+    TextField TeacherName;
+    @FXML
+    PasswordField Teacherpass;
 
     @FXML
     TextField name;
@@ -133,18 +137,106 @@ public class Controller {
     public String addAll(String firstName, String regNum, String phNo, String currentSem, String cgpa, String department, String programManager, String Religion){
         return firstName+" "+regNum+" "+phNo+" "+currentSem+" "+cgpa+" "+department+" "+programManager+" "+Religion;
     }
+    @FXML
+    private TextField AdminName;
+    @FXML
+    private PasswordField AdminPass;
     public void VerifyAdmin(ActionEvent event) throws IOException{
-        root=FXMLLoader.load(getClass().getResource("AdminOption.fxml"));
-        stage=(Stage)((Node)event.getSource()).getScene().getWindow();
-        scene=new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+      String TempAdminName=AdminName.getText();
+      String TempAdminPass=AdminPass.getText();
+      String adminname="admin";
+        String adminpass="admin";
+      if(TempAdminName.equals("admin")&&TempAdminPass.equals("admin")){
+          root=FXMLLoader.load(getClass().getResource("AdminOption.fxml"));
+          stage=(Stage)((Node)event.getSource()).getScene().getWindow();
+          scene=new Scene(root);
+          stage.setScene(scene);
+          stage.show();
+
+      }
+          else{
+              Alert invalid = new Alert(Alert.AlertType.WARNING, "Warning", ButtonType.OK);
+              Window owner = ((Node) event.getTarget()).getScene().getWindow();
+              invalid.setContentText("Login invalid, retry");
+              invalid.initModality(Modality.APPLICATION_MODAL);
+              invalid.initOwner(owner);
+              invalid.showAndWait();
+              if (invalid.getResult()==ButtonType.OK){
+                  FXMLLoader loader = new FXMLLoader(getClass().getResource("Admin.fxml"));
+                  root=loader.load();
+                  AdminName.clear();
+                  AdminPass.clear();
+
+              }
+
+          }
+
     }
     public void VerifyTeacher(ActionEvent event) throws IOException{
-        root=FXMLLoader.load(getClass().getResource("TeacherOption.fxml"));
+        String Teachername = TeacherName.getText();
+        String TeacherId = Teacherpass.getText();
+
+        BufferedReader auth = new BufferedReader(new FileReader("./teacher.txt"));
+        String thisLine="";
+
+        while((thisLine= auth.readLine())!=null) {
+            String[] split = thisLine.split(" ");
+            String FirstName = split[0];
+            String LastName = split[1];
+            String IdNo= split[2];
+            String PhoneNo = split[3];
+            String Experience = split[4];
+            String Department = split[5];
+            String SubjectTeaches = split[6];
+            String Qualification = split[7];
+            String Designation = split[8];
+            String Faculty = split[9];
+
+            if((Teachername.equals(FirstName)) && (TeacherId.equals(IdNo))){
+                FXMLLoader load = new FXMLLoader(getClass().getResource("Teacher Details.fxml"));
+                root=load.load();
+                TeacherPortal teacherPortal = load.getController();
+
+                teacherPortal.TeacherFirstNameLabel.setText(Teachername);
+                teacherPortal.TeacherLastNameLabel.setText(LastName);
+                teacherPortal.IdNoLabel.setText(TeacherId);
+                teacherPortal.PhoneNumberLabel.setText(PhoneNo);
+                teacherPortal.ExperienceLabel.setText( Experience);
+                teacherPortal. DepartementLabel.setText(Department);
+                teacherPortal.SubjectTeachesLabel.setText(SubjectTeaches);
+                teacherPortal.QualificationLabel.setText(Qualification);
+                teacherPortal.DesignationLabel.setText(Designation);
+                teacherPortal. FacultyLabel.setText(Faculty);
+
+                File thefile = new File("./tempTeacher.txt");
+                BufferedWriter bw = new BufferedWriter(new FileWriter(thefile));
+                String data = addTeacherAll(Teachername,LastName,TeacherId,PhoneNo,Experience,Department,SubjectTeaches,Qualification,Designation,Faculty);
+                bw.write(data);
+                bw.close();
+            } else {
+                Alert invalid = new Alert(Alert.AlertType.WARNING, "Warning", ButtonType.OK);
+                Window owner = ((Node) event.getTarget()).getScene().getWindow();
+                invalid.setContentText("Login invalid, retry");
+                invalid.initModality(Modality.APPLICATION_MODAL);
+                invalid.initOwner(owner);
+                invalid.showAndWait();
+                if (invalid.getResult()==ButtonType.OK){
+                    TeacherName.clear();
+                    Teacherpass.clear();
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("Teacher.fxml"));
+                    root=loader.load();
+                   TeacherController teacherController =loader.getController();
+                }
+            }
+        }
         stage=(Stage)((Node)event.getSource()).getScene().getWindow();
         scene=new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
+    public String addTeacherAll(String firstName, String lastname, String idno, String phonenum, String experience, String department, String subjectetaches, String qualification,String designation,String faculty){
+        return firstName+" "+lastname+" "+idno+" "+phonenum+" "+experience+" "+department+" "+subjectetaches+" "+qualification+" "+designation+" "+faculty;
+    }
+
+
 }

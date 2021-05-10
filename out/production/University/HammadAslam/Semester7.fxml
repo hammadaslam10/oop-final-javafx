@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="548.0" prefWidth="756.0" style="-fx-background-color: #52FAF5;" stylesheets="@Styles.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="HammadAslam.StudentInfo">
+    <children>
+        <VBox prefHeight="548.0" prefWidth="227.0" style="-fx-background-color: #6894F4; -fx-border-color: white;" stylesheets="@Styles.css" AnchorPane.leftAnchor="0.0">
+            <children>
+                <Pane prefHeight="120.0" prefWidth="227.0" style="-fx-background-color: #66894F4;">
+                    <children>
+                        <Label layoutX="64.0" layoutY="14.0" prefHeight="48.0" prefWidth="100.0" text="GUT" textAlignment="RIGHT" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold Italic" size="48.0" />
+                            </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="-1.0" layoutY="39.0" prefHeight="70.0" prefWidth="227.0" text="Goveremnt University Of Techology" textFill="WHITE" wrapText="true">
+                            <font>
+                                <Font size="13.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </Pane>
+            </children>
+        </VBox>
+        <Label fx:id="cross" layoutX="728.0" layoutY="-13.0" onDragDetected="#Crossbutton" prefHeight="17.0" prefWidth="28.0" text="x" textFill="WHITE">
+            <font>
+                <Font size="36.0" />
+            </font></Label>
+        <CheckBox fx:id="FinalYearProject" layoutX="241.0" layoutY="149.0" mnemonicParsing="false" text="FinalYearProject">
+            <font>
+                <Font name="FontAwesome Regular" size="13.0" />
+            </font></CheckBox>
+        <CheckBox fx:id="ParallelAndDistributedComputing" layoutX="241.0" layoutY="227.0" mnemonicParsing="false" text="ParallelAndDistributedComputing">
+            <font>
+                <Font name="FontAwesome Regular" size="13.0" />
+            </font></CheckBox>
+        <TextField fx:id="transcript" layoutX="399.0" layoutY="475.0" prefHeight="25.0" prefWidth="188.0" />
+        <Button layoutX="422.0" layoutY="502.0" mnemonicParsing="false" onAction="#AddSem7" style="-fx-font-size: 12;" text="Total Fee" />
+        <Button layoutX="499.0" layoutY="502.0" mnemonicParsing="false" onAction="#ClearSem7" style="-fx-font-size: 12;" text="clear" />
+        <Button layoutX="227.0" layoutY="2.0" mnemonicParsing="false" onAction="#SwitchToCourseRegistration" text="&lt;" textFill="WHITE" />
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="49.0" layoutX="228.0" layoutY="89.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="529.0" />
+        <Label layoutX="290.0" layoutY="100.0" text="Compulsory" textFill="WHITE">
+            <font>
+                <Font name="FontAwesome Regular" size="24.0" />
+            </font>
+        </Label>
+        <Label layoutX="562.0" layoutY="100.0" text="Cs Elective" textFill="WHITE">
+            <font>
+                <Font name="FontAwesome Regular" size="24.0" />
+            </font>
+        </Label>
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="194.0" layoutX="487.0" layoutY="136.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="12.0" />
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="18.0" layoutX="228.0" layoutY="457.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="529.0" />
+        <CheckBox fx:id="WebTechnologies" layoutX="525.0" layoutY="181.0" mnemonicParsing="false" onAction="#CsElectiveFunction2Sem6" text="WebTechnologies">
+            <font>
+                <Font name="FontAwesome Regular" size="13.0" />
+            </font>
+        </CheckBox>
+        <CheckBox fx:id="AndriodApplicationDevelopment" layoutX="522.0" layoutY="149.0" mnemonicParsing="false" onAction="#CsElectiveFunction1Sem6" text="AndriodApplicationDevelopment">
+            <font>
+                <Font name="FontAwesome Regular" size="13.0" />
+            </font>
+        </CheckBox>
+        <CheckBox fx:id="IosDevelopment" layoutX="526.0" layoutY="236.0" mnemonicParsing="false" onAction="#CsElectiveFunction4Sem6" text="IosDevelopment">
+            <font>
+                <Font name="FontAwesome Regular" size="13.0" />
+            </font>
+        </CheckBox>
+        <CheckBox fx:id="EthicalHacking" layoutX="525.0" layoutY="209.0" mnemonicParsing="false" onAction="#CsElectiveFunction3Sem6" text="EthicalHacking">
+            <font>
+                <Font name="FontAwesome Regular" size="13.0" />
+            </font>
+        </CheckBox>
+        <CheckBox fx:id="EmbededSystems" layoutX="527.0" layoutY="297.0" mnemonicParsing="false" onAction="#CsElectiveFunction6Sem6" text="EmbededSystems">
+            <font>
+                <Font name="FontAwesome Regular" size="13.0" />
+            </font>
+        </CheckBox>
+        <CheckBox fx:id="SoftwareProjectManagement" layoutX="526.0" layoutY="265.0" mnemonicParsing="false" onAction="#CsElectiveFunction5Sem6" text="SoftwareProjectManagement">
+            <font>
+                <Font name="FontAwesome Regular" size="13.0" />
+            </font>
+        </CheckBox>
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="35.0" layoutX="229.0" layoutY="323.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="529.0" />
+        <Label layoutX="397.0" layoutY="323.0" text="University Elective" textFill="WHITE">
+            <font>
+                <Font name="FontAwesome Regular" size="24.0" />
+            </font>
+        </Label>
+        <CheckBox fx:id="HistoryOfScientificIdeas" layoutX="317.0" layoutY="366.0" mnemonicParsing="false" onAction="#UniElectiveFunction1Sem7" text="HistoryOfScientificIdeas">
+            <font>
+                <Font name="FontAwesome Regular" size="13.0" />
+            </font>
+        </CheckBox>
+        <CheckBox fx:id="BussinesAndTechnologyEthics" layoutX="318.0" layoutY="408.0" mnemonicParsing="false" onAction="#UniElectiveFunction2Sem7" text="BussinesAndTechnologyEthics">
+            <font>
+                <Font name="FontAwesome Regular" size="13.0" />
+            </font>
+        </CheckBox>
+        <CheckBox fx:id="ManagementPrinciples" layoutX="544.0" layoutY="366.0" mnemonicParsing="false" onAction="#UniElectiveFunction3Sem7" text="ManagementPrinciples">
+            <font>
+                <Font name="FontAwesome Regular" size="13.0" />
+            </font>
+        </CheckBox>
+        <CheckBox fx:id="ResearchReport" layoutX="544.0" layoutY="408.0" mnemonicParsing="false" onAction="#UniElectiveFunction4Sem7" text="ResearchReport">
+            <font>
+                <Font name="FontAwesome Regular" size="13.0" />
+            </font>
+        </CheckBox>
+    </children>
+</AnchorPane>

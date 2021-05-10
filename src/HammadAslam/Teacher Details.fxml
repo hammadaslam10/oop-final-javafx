@@ -80,26 +80,26 @@
         <Rectangle arcHeight="130.0" arcWidth="130.0" fill="DODGERBLUE" height="289.0" layoutX="492.0" layoutY="245.0" stroke="BLACK" strokeType="INSIDE" width="248.0" />
         <Label fx:id="TeacherFirstNameLabel" alignment="CENTER" layoutX="350.0" layoutY="303.0" prefHeight="27.0" prefWidth="133.0" text="Label" textFill="WHITE">
             <font>
-                <Font size="18.0" />
+                <Font name="FontAwesome Regular" size="18.0" />
             </font></Label>
         <Label fx:id="IdNoLabel" alignment="CENTER" layoutX="364.0" layoutY="399.0" prefHeight="27.0" prefWidth="121.0" text="Label" textFill="WHITE">
             <font>
-                <Font size="18.0" />
+                <Font name="FontAwesome Regular" size="18.0" />
 
             </font>
         </Label>
         <Label fx:id="TeacherLastNameLabel" alignment="CENTER" layoutX="360.0" layoutY="345.0" prefHeight="27.0" prefWidth="121.0" text="Label" textFill="WHITE">
             <font>
-                <Font size="18.0" />
+                <Font name="FontAwesome Regular" size="18.0" />
             </font>
         </Label>
         <Label layoutX="260.0" layoutY="308.0" text="First Name" />
         <Label layoutX="264.0" layoutY="350.0" text="Last Name" />
         <Label layoutX="277.0" layoutY="404.0" text="Id No" />
         <Label layoutX="265.0" layoutY="448.0" text="Phone number" />
-        <Label fx:id="PhoneNumberLabel" alignment="CENTER" layoutX="358.0" layoutY="443.0" prefHeight="27.0" prefWidth="121.0" text="Label" textFill="WHITE">
+        <Label fx:id="PhoneNumberLabel" alignment="CENTER" layoutX="364.0" layoutY="443.0" prefHeight="27.0" prefWidth="121.0" text="Label" textFill="WHITE">
             <font>
-                <Font size="18.0" />
+                <Font name="FontAwesome Regular" size="18.0" />
             </font>
         </Label>
         <Label alignment="CENTER" layoutX="247.0" layoutY="209.0" prefHeight="35.0" prefWidth="227.0" text="Personal Information" textFill="WHITE">
@@ -116,11 +116,23 @@
         <Label layoutX="516.0" layoutY="350.0" text="SubjectTeaches" />
         <Label layoutX="515.0" layoutY="317.0" text="Departement" />
         <Label layoutX="524.0" layoutY="381.0" text="Qualification" />
-        <Label fx:id="ExperienceLabel" alignment="CENTER" layoutX="598.0" layoutY="277.0" prefHeight="27.0" prefWidth="139.0" text="Label" textFill="WHITE" />
-        <Label fx:id="DepartementLabel" alignment="CENTER" layoutX="598.0" layoutY="312.0" prefHeight="27.0" prefWidth="139.0" text="Label" textFill="WHITE" />
-        <Label fx:id="InfoLabel112" alignment="CENTER" layoutX="598.0" layoutY="345.0" prefHeight="27.0" prefWidth="139.0" text="Label" textFill="WHITE" />
+        <Label fx:id="ExperienceLabel" alignment="CENTER" layoutX="598.0" layoutY="277.0" prefHeight="27.0" prefWidth="139.0" text="Label" textFill="WHITE">
+         <font>
+            <Font name="FontAwesome Regular" size="18.0" />
+         </font></Label>
+        <Label fx:id="DepartementLabel" alignment="CENTER" layoutX="598.0" layoutY="312.0" prefHeight="27.0" prefWidth="139.0" text="Label" textFill="WHITE">
+         <font>
+            <Font name="FontAwesome Regular" size="18.0" />
+         </font></Label>
+        <Label fx:id="SubjectTeachesLabel" alignment="CENTER" layoutX="598.0" layoutY="345.0" prefHeight="27.0" prefWidth="139.0" text="Label" textFill="WHITE">
+         <font>
+            <Font name="FontAwesome Regular" size="18.0" />
+         </font></Label>
         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="89.0" layoutX="227.0" layoutY="81.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="529.0" />
-        <Label fx:id="InfoLabel1121" alignment="CENTER" layoutX="601.0" layoutY="376.0" prefHeight="27.0" prefWidth="133.0" text="Label" textFill="WHITE" />
+        <Label fx:id="QualificationLabel" alignment="CENTER" layoutX="601.0" layoutY="376.0" prefHeight="27.0" prefWidth="133.0" text="Label" textFill="WHITE">
+         <font>
+            <Font name="FontAwesome Regular" size="18.0" />
+         </font></Label>
         <Label alignment="CENTER" layoutX="304.0" layoutY="99.0" prefHeight="35.0" prefWidth="390.0" text="Your Info" textFill="WHITE">
             <font>
                 <Font size="36.0" />
@@ -128,7 +140,13 @@
         </Label>
       <Label layoutX="525.0" layoutY="413.0" text="Designation" />
       <Label layoutX="539.0" layoutY="448.0" text="Faculty" />
-      <Label fx:id="InfoLabel11211" alignment="CENTER" layoutX="603.0" layoutY="408.0" prefHeight="27.0" prefWidth="133.0" text="Label" textFill="WHITE" />
-      <Label fx:id="InfoLabel11212" alignment="CENTER" layoutX="601.0" layoutY="443.0" prefHeight="27.0" prefWidth="133.0" text="Label" textFill="WHITE" />
+      <Label fx:id="DesignationLabel" alignment="CENTER" layoutX="603.0" layoutY="408.0" prefHeight="27.0" prefWidth="133.0" text="Label" textFill="WHITE">
+         <font>
+            <Font name="FontAwesome Regular" size="18.0" />
+         </font></Label>
+      <Label fx:id="FacultyLabel" alignment="CENTER" layoutX="601.0" layoutY="443.0" prefHeight="27.0" prefWidth="133.0" text="Label" textFill="WHITE">
+         <font>
+            <Font name="FontAwesome Regular" size="18.0" />
+         </font></Label>
     </children>
 </AnchorPane>

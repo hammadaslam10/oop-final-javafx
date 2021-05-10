@@ -28,7 +28,7 @@
                   </Label>
                </children>
             </Pane>
-            <Button alignment="CENTER" cancelButton="true" graphicTextGap="100.0" lineSpacing="1000.0" mnemonicParsing="false" onAction="#SwitchToSemesterInfo" prefHeight="73.0" prefWidth="227.0" style="-fx-font-size: 20;" stylesheets="Styles.css" text="Main" textAlignment="CENTER" textFill="#f3f8f5">
+            <Button alignment="CENTER" cancelButton="true" graphicTextGap="100.0" lineSpacing="1000.0" mnemonicParsing="false" onAction="#SwitchToStudentPortal" prefHeight="73.0" prefWidth="227.0" style="-fx-font-size: 20;" stylesheets="Styles.css" text="Main" textAlignment="CENTER" textFill="#f3f8f5">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
@@ -76,7 +76,7 @@
          <font>
             <Font size="36.0" />
          </font></Label>
-      <Button layoutX="227.0" mnemonicParsing="false" onAction="#SwitchToStudentPortal" prefHeight="27.0" prefWidth="65.0" text="&lt;" textFill="WHITE" />
+      <Button layoutX="227.0" mnemonicParsing="false" onAction="#SwitchToStudent" prefHeight="27.0" prefWidth="65.0" text="&lt;" textFill="WHITE" />
       <Rectangle arcHeight="130.0" arcWidth="130.0" fill="DODGERBLUE" height="289.0" layoutX="236.0" layoutY="245.0" stroke="BLACK" strokeType="INSIDE" width="248.0" />
       <Rectangle arcHeight="130.0" arcWidth="130.0" fill="DODGERBLUE" height="289.0" layoutX="492.0" layoutY="245.0" stroke="BLACK" strokeType="INSIDE" width="248.0" />
       <Label fx:id="NameLabel" alignment="CENTER" layoutX="350.0" layoutY="303.0" prefHeight="27.0" prefWidth="133.0" text="Label" textFill="WHITE">

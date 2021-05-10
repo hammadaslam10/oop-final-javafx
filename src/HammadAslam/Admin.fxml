@@ -15,7 +15,7 @@
 <AnchorPane prefHeight="548.0" prefWidth="756.0" style="-fx-background-color: #52FAF5;" stylesheets="@Styles.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="HammadAslam.Controller">
     <children>
         <Rectangle arcHeight="180.0" arcWidth="180.0" fill="DODGERBLUE" height="333.0" layoutX="313.0" layoutY="166.0" stroke="BLACK" strokeType="INSIDE" width="371.0" />
-        <TextField fx:id="name" layoutX="433.0" layoutY="249.0" prefHeight="26.0" prefWidth="236.0" promptText="Type your User Name" style="-fx-background-color: #1e90ff; -fx-border-color: white; -fx-border-radius: 10;" />
+        <TextField fx:id="AdminName" layoutX="433.0" layoutY="249.0" prefHeight="26.0" prefWidth="236.0" promptText="Type your User Name" style="-fx-background-color: #1e90ff; -fx-border-color: white; -fx-border-radius: 10;" />
         <Label layoutX="329.0" layoutY="289.0" text="Password" textFill="WHITE">
             <font>
                 <Font name="FontAwesome Regular" size="24.0" />
@@ -100,6 +100,6 @@
                     </font>
                 </Label>
             </children></Pane>
-        <PasswordField fx:id="pass" layoutX="435.0" layoutY="290.0" prefHeight="26.0" prefWidth="236.0" promptText="type Password" style="-fx-background-color: #1e90ff; -fx-border-color: white; -fx-border-radius: 10;" />
+        <PasswordField fx:id="AdminPass" layoutX="435.0" layoutY="290.0" prefHeight="26.0" prefWidth="236.0" promptText="type Password" style="-fx-background-color: #1e90ff; -fx-border-color: white; -fx-border-radius: 10;" />
     </children>
 </AnchorPane>
