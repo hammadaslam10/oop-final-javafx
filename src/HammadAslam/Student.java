@@ -8,9 +8,9 @@ public class Student {
     private StringProperty Department = new SimpleStringProperty(this,"Department");
     private StringProperty ProgramManager = new SimpleStringProperty(this,"ProgramManager","");
     private StringProperty Gender= new SimpleStringProperty(this,"Gender","");
-    private IntegerProperty RegistrationNo = new SimpleIntegerProperty(this,"Registration",0);
-    private DoubleProperty PhoneNo=new SimpleDoubleProperty(this,"PhoneNo",0.0);
-    private IntegerProperty CurrentSem =new SimpleIntegerProperty(this,"CurrentSem",0);
+    private LongProperty RegistrationNo = new SimpleLongProperty(this,"Registration",0);
+    private LongProperty PhoneNo=new SimpleLongProperty(this,"PhoneNo",0);
+    private LongProperty CurrentSem =new SimpleLongProperty(this,"CurrentSem",0);
     private DoubleProperty Cgpa =new SimpleDoubleProperty(this,"Cgpa",0.0);
     private StringProperty Religion = new SimpleStringProperty(this,"Religion","");
 
@@ -18,15 +18,15 @@ public class Student {
 
     }
 
-    public Student(String firstName, String lastName, String department, String programManager, String gender, int registrationNo, double phoneNo, int currentSem, double cgpa, String religion) {
+    public Student(String firstName, String lastName, String department, String programManager, String gender, long registrationNo, long phoneNo, long currentSem, double cgpa, String religion) {
         FirstName = new SimpleStringProperty(firstName);
         LastName = new SimpleStringProperty(lastName);
         Department = new SimpleStringProperty(department);
         ProgramManager = new SimpleStringProperty(programManager);
         Gender = new SimpleStringProperty(gender);
-        RegistrationNo = new SimpleIntegerProperty(registrationNo);
-        PhoneNo = new SimpleDoubleProperty(phoneNo);
-        CurrentSem = new SimpleIntegerProperty(currentSem);
+        RegistrationNo = new SimpleLongProperty(registrationNo);
+        PhoneNo = new SimpleLongProperty(phoneNo);
+        CurrentSem = new SimpleLongProperty(currentSem);
         Cgpa = new SimpleDoubleProperty(cgpa);
         Religion = new SimpleStringProperty(religion);
     }
@@ -43,11 +43,11 @@ public class Student {
         return LastName;
     }
 
-    public DoubleProperty phoneNoProperty() {
+    public LongProperty phoneNoProperty() {
         return PhoneNo;
     }
 
-    public IntegerProperty registrationNoProperty() {
+    public LongProperty registrationNoProperty() {
         return RegistrationNo;
     }
 
@@ -80,11 +80,11 @@ public class Student {
         return Cgpa.get();
     }
 
-    public int getCurrentSem() {
+    public long getCurrentSem() {
         return CurrentSem.get();
     }
 
-    public double getPhoneNo() {
+    public long getPhoneNo() {
         return PhoneNo.get();
     }
 
@@ -96,7 +96,7 @@ public class Student {
         return ProgramManager.get();
     }
 
-    public int getRegistrationNo() {
+    public long getRegistrationNo() {
         return RegistrationNo.get();
     }
 
@@ -120,11 +120,11 @@ public class Student {
         this.Gender.set(gender);
     }
 
-    public void setCgpa(double cgpa) {
-        this.Cgpa.set(cgpa);
+    public void setCgpa(Number cgpa) {
+        this.Cgpa.set((Double) cgpa);
     }
 
-    public void setCurrentSem(int currentSem) {
+    public void setCurrentSem(long currentSem) {
         this.CurrentSem.set(currentSem);
     }
 
@@ -132,7 +132,7 @@ public class Student {
         this.Department.set(department);
     }
 
-    public void setPhoneNo(double phoneNo) {
+    public void setPhoneNo(long phoneNo) {
         this.PhoneNo.set(phoneNo);
     }
 
@@ -140,7 +140,7 @@ public class Student {
         this.ProgramManager.set(programManager);
     }
 
-    public void setRegistrationNo(int registrationNo) {
+    public void setRegistrationNo(long registrationNo) {
         this.RegistrationNo.set(registrationNo);
     }
 
@@ -148,7 +148,7 @@ public class Student {
         this.Religion.set(religion);
     }
 
-    public IntegerProperty currentSemProperty() {
+    public LongProperty currentSemProperty() {
         return CurrentSem;
     }
     public String toString() {

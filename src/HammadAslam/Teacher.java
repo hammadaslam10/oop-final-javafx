@@ -5,11 +5,11 @@ import javafx.beans.property.*;
 public class Teacher {
     private StringProperty FirstName =new SimpleStringProperty(this,"Firstname", "");
     private StringProperty LastName=new SimpleStringProperty(this,"LastName", "");
-    private IntegerProperty IdNo = new SimpleIntegerProperty(this,"IdNo",0);
-    private IntegerProperty Experience = new SimpleIntegerProperty(this,"Experience",0);
+    private LongProperty IdNo = new SimpleLongProperty(this,"IdNo",0);
+    private DoubleProperty Experience = new SimpleDoubleProperty(this,"Experience",0.0);
     private StringProperty Department= new SimpleStringProperty(this,"Department","");
     private StringProperty SubjectTeaches = new SimpleStringProperty(this,"SubjectTeaches","");
-    private DoubleProperty PhoneNo = new SimpleDoubleProperty(this,"PhoneNo",0.0);
+    private LongProperty PhoneNo = new SimpleLongProperty(this,"PhoneNo",0);
     private StringProperty Qualification=new SimpleStringProperty(this,"Qualification","");
     private StringProperty Designation =new SimpleStringProperty(this,"Designation","");
     private StringProperty Faculty =new SimpleStringProperty(this,"Faculty","");
@@ -19,12 +19,12 @@ public class Teacher {
     }
     //public Teacher(String firstName, String lastName, int idNo, int experience, String department, String subjectTeaches, double phoneNo, String qualification, String designation, String faculty) {
 
-    public Teacher(String firstName, String lastName, int idNo, double phoneNo, int experience, String department, String subjectTeaches, String qualification, String designation, String faculty) {
+    public Teacher(String firstName, String lastName, long idNo, long phoneNo, double experience, String department, String subjectTeaches, String qualification, String designation, String faculty) {
             this.FirstName = new SimpleStringProperty(firstName);
             this.LastName = new SimpleStringProperty(lastName);
-            this.IdNo = new SimpleIntegerProperty(idNo);
-            this.PhoneNo = new SimpleDoubleProperty(phoneNo);
-            this.Experience =new SimpleIntegerProperty(experience);
+            this.IdNo = new SimpleLongProperty(idNo);
+            this.PhoneNo = new SimpleLongProperty(phoneNo);
+            this.Experience =new SimpleDoubleProperty(experience);
             this.Department = new SimpleStringProperty(department);
             this.SubjectTeaches = new SimpleStringProperty(subjectTeaches);
             this.Qualification = new SimpleStringProperty(qualification);
@@ -42,7 +42,7 @@ public class Teacher {
         return LastName;
     }
 
-    public DoubleProperty phoneNoProperty() {
+    public LongProperty phoneNoProperty() {
         return PhoneNo;
     }
 
@@ -50,7 +50,7 @@ public class Teacher {
         return Department;
     }
 
-    public IntegerProperty experienceProperty() {
+    public DoubleProperty experienceProperty() {
         return Experience;
     }
 
@@ -58,7 +58,7 @@ public class Teacher {
         return SubjectTeaches;
     }
 
-    public IntegerProperty idNoProperty() {
+    public LongProperty idNoProperty() {
         return IdNo;
     }
 
@@ -91,15 +91,15 @@ public class Teacher {
         return LastName.get();
     }
 
-    public int getExperience() {
+    public double getExperience() {
         return Experience.get();
     }
 
-    public int getIdNo() {
+    public long getIdNo() {
         return IdNo.get();
     }
 
-    public double getPhoneNo() {
+    public long getPhoneNo() {
         return PhoneNo.get();
     }
 
@@ -131,11 +131,11 @@ public class Teacher {
         this.LastName.set(lastName);
     }
 
-    public void setIdNo(int idNo) {
+    public void setIdNo(long idNo) {
         this.IdNo.set(idNo);
     }
 
-    public void setPhoneNo(double phoneNo) {
+    public void setPhoneNo(long phoneNo) {
         this.PhoneNo.set(phoneNo);
     }
 
@@ -143,7 +143,7 @@ public class Teacher {
         this.Designation.set(designation);
     }
 
-    public void setExperience(int experience) {
+    public void setExperience(double experience) {
         this.Experience.set(experience);
     }
 

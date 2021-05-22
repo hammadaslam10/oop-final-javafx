@@ -124,7 +124,7 @@ public class TeacherController implements Initializable {
         FacultyCol.setOnEditCommit(e->FacultyCol_OnEditCommit(e));
         DesignationCol.setOnEditCommit(e->DesignationCol_OnEditCommit(e));
 
-            TeacherTable.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
+        TeacherTable.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
 
         FirstNameCol.setCellFactory(TextFieldTableCell.forTableColumn());
         LastNameCol.setCellFactory(TextFieldTableCell.forTableColumn());
@@ -193,9 +193,9 @@ public class TeacherController implements Initializable {
                 String[] split = thisLine.split(" ");
                 String FirstName = split[0];
                 String LastName = split[1];
-                int IdNo = Integer.parseInt(split[2]);
-                double PhoneNo = Double.parseDouble(split[3]);
-                int Experience = Integer.parseInt(split[4]);
+                long IdNo = Long.parseLong(split[2]);
+                long PhoneNo = Long.parseLong(split[3]);
+                double Experience = Double.parseDouble(split[4]);
                 String Department = (split[5]);
                 String SubjectTeaches = split[6];
                 String Qualification = split[7];
@@ -229,10 +229,10 @@ public class TeacherController implements Initializable {
 
 
     public  void ExperienceCol_OnEditCommit(Event e) {
-        TableColumn.CellEditEvent<Teacher, Integer> cellEditEvent;
-        cellEditEvent = (TableColumn.CellEditEvent<Teacher, Integer>) e;
+        TableColumn.CellEditEvent<Teacher, Number> cellEditEvent;
+        cellEditEvent = (TableColumn.CellEditEvent<Teacher, Number>) e;
         Teacher teacher = cellEditEvent.getRowValue();
-        teacher.setExperience(cellEditEvent.getNewValue());
+        teacher.setExperience((Double) cellEditEvent.getNewValue());
     }
 
 
@@ -253,10 +253,10 @@ public class TeacherController implements Initializable {
 
 
     public void IdNoCol_OnEditCommit(Event e) {
-        TableColumn.CellEditEvent<Teacher, Integer> cellEditEvent;
-        cellEditEvent = (TableColumn.CellEditEvent<Teacher, Integer>) e;
+        TableColumn.CellEditEvent<Teacher, Number> cellEditEvent;
+        cellEditEvent = (TableColumn.CellEditEvent<Teacher, Number>) e;
         Teacher teacher = cellEditEvent.getRowValue();
-        teacher.setIdNo(cellEditEvent.getNewValue());
+        teacher.setIdNo((Long)cellEditEvent.getNewValue());
     }
 
 
@@ -269,10 +269,10 @@ public class TeacherController implements Initializable {
 
 
     public void PhoneNoCol_OnEditCommit(Event e) {
-        TableColumn.CellEditEvent<Teacher, Double> cellEditEvent;
-        cellEditEvent = (TableColumn.CellEditEvent<Teacher, Double>) e;
+        TableColumn.CellEditEvent<Teacher, Number> cellEditEvent;
+        cellEditEvent = (TableColumn.CellEditEvent<Teacher, Number>) e;
         Teacher teacher = cellEditEvent.getRowValue();
-        teacher.setPhoneNo(cellEditEvent.getNewValue());
+        teacher.setPhoneNo((Long)cellEditEvent.getNewValue());
     }
 
 
@@ -298,10 +298,10 @@ public class TeacherController implements Initializable {
                     Teacher teacher =new Teacher();
                     teacher.setFirstName(FirstNameField.getText());
                     teacher.setLastName(LastNameField.getText());
-                    teacher.setIdNo(Integer.parseInt(IdNoField.getText()));
-                    teacher.setExperience(Integer.parseInt(ExperienceField.getText()));
+                    teacher.setIdNo(Long.parseLong(IdNoField.getText()));
+                    teacher.setExperience(Double.parseDouble(ExperienceField.getText()));
                     teacher.setSubjectTeaches(SubjectTeachesField.getText());
-                    teacher.setPhoneNo(Double.parseDouble(PhoneNoField.getText()));
+                    teacher.setPhoneNo(Long.parseLong(PhoneNoField.getText()));
                     teacher.setDepartment(DepartmentField.getText());
                     teacher.setQualification(QualificationCombo.getValue());
                     teacher.setDesignation(DesignationCombo.getValue());
@@ -324,10 +324,10 @@ public class TeacherController implements Initializable {
                     Teacher teacher =new Teacher();
                     teacher.setFirstName(FirstNameField.getText());
                     teacher.setLastName(LastNameField.getText());
-                    teacher.setIdNo(Integer.parseInt(IdNoField.getText()));
-                    teacher.setExperience(Integer.parseInt(ExperienceField.getText()));
+                    teacher.setIdNo(Long.parseLong(IdNoField.getText()));
+                    teacher.setExperience(Double.parseDouble(ExperienceField.getText()));
                     teacher.setSubjectTeaches(SubjectTeachesField.getText());
-                    teacher.setPhoneNo(Double.parseDouble(PhoneNoField.getText()));
+                    teacher.setPhoneNo(Long.parseLong(PhoneNoField.getText()));
                     teacher.setDepartment(DepartmentField.getText());
                     teacher.setQualification(QualificationCombo.getValue());
                     teacher.setDesignation(DesignationCombo.getValue());

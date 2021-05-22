@@ -187,9 +187,9 @@ public class StudentController implements Initializable {
                 String[] split = thisLine.split(" ");
                 String FirstName = split[0];
                 String LastName = split[1];
-                int RegistrationNo = Integer.parseInt(split[2]);
-                double PhoneNo = Double.parseDouble(split[3]);
-                int CurrentSem = Integer.parseInt(split[4]);
+                long RegistrationNo = Long.parseLong(split[2]);
+                long PhoneNo = Long.parseLong(split[3]);
+                long CurrentSem = Long.parseLong(split[4]);
                 double Cgpa = Double.parseDouble(split[5]);
                 String Department = split[6];
                 String ProgramManager = split[7];
@@ -212,9 +212,9 @@ public class StudentController implements Initializable {
                     student.setLastName(LastNameField.getText());
                     student.setReligion(ReligionCombo.getValue());
                     student.setDepartment(DepartmentField.getText());
-                    student.setPhoneNo(Double.parseDouble(PhoneNoField.getText()));
-                    student.setRegistrationNo(Integer.parseInt(RegistrationNoField.getText()));
-                    student.setCurrentSem(Integer.parseInt(CurrentSemField.getText()));
+                    student.setPhoneNo(Long.parseLong(PhoneNoField.getText()));
+                    student.setRegistrationNo(Long.parseLong(RegistrationNoField.getText()));
+                    student.setCurrentSem(Long.parseLong(CurrentSemField.getText()));
                     student.setProgramManager(ProgramManagerField.getText());
                     student.setGender(GenderCombo.getValue());
                     student.setCgpa(Double.parseDouble(CgpaField.getText()));
@@ -238,9 +238,9 @@ public class StudentController implements Initializable {
                     student.setLastName(LastNameField.getText());
                     student.setReligion(ReligionCombo.getValue());
                     student.setDepartment(DepartmentField.getText());
-                    student.setPhoneNo(Double.parseDouble(PhoneNoField.getText()));
-                    student.setRegistrationNo(Integer.parseInt(RegistrationNoField.getText()));
-                    student.setCurrentSem(Integer.parseInt(CurrentSemField.getText()));
+                    student.setPhoneNo(Long.parseLong(PhoneNoField.getText()));
+                    student.setRegistrationNo(Long.parseLong(RegistrationNoField.getText()));
+                    student.setCurrentSem(Long.parseLong(CurrentSemField.getText()));
                     student.setProgramManager(ProgramManagerField.getText());
                     student.setGender(GenderCombo.getValue());
                     student.setCgpa(Double.parseDouble(CgpaField.getText()));
@@ -535,18 +535,18 @@ public class StudentController implements Initializable {
 
 
     public void CgpaCol_OnEditCommit(Event e) {
-        TableColumn.CellEditEvent<Student, Double> cellEditEvent;
-        cellEditEvent = (TableColumn.CellEditEvent<Student,Double>) e;
+        TableColumn.CellEditEvent<Student, Number> cellEditEvent;
+        cellEditEvent = (TableColumn.CellEditEvent<Student,Number>) e;
         Student student = cellEditEvent.getRowValue();
         student.setCgpa(cellEditEvent.getNewValue());
     }
 
 
     public void CurrentSemCol_OnEditCommit(Event e) {
-        TableColumn.CellEditEvent<Student, Integer> cellEditEvent;
-        cellEditEvent = (TableColumn.CellEditEvent<Student, Integer>) e;
+        TableColumn.CellEditEvent<Student, Number> cellEditEvent;
+        cellEditEvent = (TableColumn.CellEditEvent<Student, Number>) e;
         Student student = cellEditEvent.getRowValue();
-        student.setCurrentSem(cellEditEvent.getNewValue());
+        student.setCurrentSem((Long)cellEditEvent.getNewValue());
     }
 
     public void DepartmentCol_OnEditCommit(Event e) {
@@ -582,10 +582,10 @@ public class StudentController implements Initializable {
 
 
     public void PhoneNo_OnEditCommit(Event e) {
-        TableColumn.CellEditEvent<Student, Double> cellEditEvent;
-        cellEditEvent = (TableColumn.CellEditEvent<Student, Double>) e;
+        TableColumn.CellEditEvent<Student, Number> cellEditEvent;
+        cellEditEvent = (TableColumn.CellEditEvent<Student, Number>) e;
         Student student = cellEditEvent.getRowValue();
-        student.setPhoneNo(cellEditEvent.getNewValue());
+        student.setPhoneNo((Long) cellEditEvent.getNewValue());
     }
 
 
@@ -598,10 +598,10 @@ public class StudentController implements Initializable {
 
     public void RegistrationNoCol_OnEditCommit(Event e) {
 
-        TableColumn.CellEditEvent<Student, Integer> cellEditEvent;
-        cellEditEvent = (TableColumn.CellEditEvent<Student, Integer>) e;
+        TableColumn.CellEditEvent<Student, Number> cellEditEvent;
+        cellEditEvent = (TableColumn.CellEditEvent<Student, Number>) e;
         Student student = cellEditEvent.getRowValue();
-        student.setRegistrationNo(cellEditEvent.getNewValue());
+        student.setRegistrationNo((Long) cellEditEvent.getNewValue());
     }
 
 
