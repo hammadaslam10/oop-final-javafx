@@ -74,6 +74,7 @@ public class Controller {
         stage.setScene(scene);
         stage.show();
     }
+    // This method is the login auth method for student. split logic is being used here.
     public void SaveDataAndAllowStudent(ActionEvent event) throws IOException {
         String username = name.getText();
         String RegStrNumber = pass.getText();
@@ -171,6 +172,7 @@ public class Controller {
               }
           }
     }
+    // Same logic used as in student.
     public void VerifyTeacher(ActionEvent event) throws IOException{
         String Teachername = TeacherName.getText();
         String TeacherId = Teacherpass.getText();

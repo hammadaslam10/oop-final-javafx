@@ -23,7 +23,8 @@ import javafx.util.converter.NumberStringConverter;
 import java.io.*;
 import java.net.URL;
 import java.util.ResourceBundle;
-
+// THIS IS THE MAIN TABLE OF STUDENT FROM WHERE STUDENT ENTRY WILL BE DONE.
+// THIS TABLE WILL BE ADDED IN ADMIN PORTAL.
 public class StudentController implements Initializable {
     @FXML    private ResourceBundle resources;
 
